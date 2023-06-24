@@ -11,8 +11,9 @@ import Container from "../../components/container/Container";
 function Clothes() {
   const [clothes, setClothes] = useState([]);
   async function fetchData() {
-    const res = await axios.get(`${API_URL}/clothes/?_expand=user`);
+    const res = await axios.get(`${API_URL}/clothings?_expand=user`);
     setClothes(res.data);
+    console.log(res.data);
   }
 
   useEffect(() => {

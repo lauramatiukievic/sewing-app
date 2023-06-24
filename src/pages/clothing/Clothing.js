@@ -3,7 +3,7 @@ import axios from "axios";
 
 import { API_URL } from "../../config";
 import { useEffect, useState } from "react";
-import { Link, useParams } from "react-router-dom";
+import { useParams } from "react-router-dom";
 import { RingLoader } from "react-spinners";
 
 import Container from "../../components/container/Container";
@@ -13,14 +13,14 @@ function Clothing() {
   const [clothing, setClothing] = useState([]);
 
   async function fetchData() {
-    const res = await axios.get(`${API_URL}/clothes/${id}?_expand=user`);
+    const res = await axios.get(`${API_URL}/clothings/${id}?_expand=user`);
     setClothing(res.data);
-    console.log(res.data.user.name);
+    console.log(res.data);
   }
 
   useEffect(() => {
     fetchData();
-  }, []);
+  }, [id]);
 
   if (!clothing) {
     return <RingLoader color="rgba(214, 142, 54, 1)" />;
