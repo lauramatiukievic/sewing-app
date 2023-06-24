@@ -12,8 +12,9 @@ function User() {
   const { id } = useParams();
   const [user, setUser] = useState(null);
   async function fetchData() {
-    const res = await axios.get(`${API_URL}/users/${id}?_embed=clothes&_embed=orders`);
+    const res = await axios.get(`${API_URL}/users/${id}?_embed=clothings&_embed=orders`);
     setUser(res.data);
+    console.log(res.data);
   }
 
   useEffect(() => {
@@ -43,22 +44,22 @@ function User() {
         <h3>Drabužių sąrašas</h3>
 
         <ul className="clothes-list">
-          {user.clothes.map((userClothing) => (
-            <li className="clothing-el" key={userClothing}>
+          {user.clothings.map((clothing) => (
+            <li className="clothing-el" key={clothing.id}>
               <span> Rūbai: </span>
-              <Link to={`/clothes/${userClothing.id}`}>{userClothing.name}</Link>
+              <Link to={`/clothes/${clothing.id}`}>{clothing.name}</Link>
             </li>
           ))}
         </ul>
       </div>
       <div className="orders-container">
-        <h3>Drabužių sąrašas</h3>
+        <h3>Užsakymų sąrašas</h3>
 
         <ul className="orders-list">
-          {user.orders.map((userOrder) => (
-            <li className="orders-el" key={userOrder}>
+          {user.orders.map((order) => (
+            <li className="orders-el" key={order.id}>
               <span> Užsakymai: </span>
-              <Link to={`/orders/${userOrder.id}`}>({userOrder.id})</Link>
+              <Link to={`/orders/${order.id}`}>({order.id})</Link>
             </li>
           ))}
         </ul>
