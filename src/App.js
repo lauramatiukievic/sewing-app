@@ -1,4 +1,4 @@
-import { Routes, Route } from "react-router-dom";
+import { Routes, Route, Link } from "react-router-dom";
 import "./App.css";
 
 import Home from "./pages/hoem/Home";
@@ -25,6 +25,16 @@ function App() {
         <Route path="/serveses:id" element={<Serves>Paslauga</Serves>} />
         <Route path="/orders" element={<Orders>Užsakymai</Orders>} />
         <Route path="/search" element={<Search>Paieška</Search>} />
+
+        <Route
+          path="*"
+          element={
+            <div>
+              <h1>404 klaida. Puslapis nerastas</h1>
+              <Link to="/home">Grįžti į pradžią</Link>
+            </div>
+          }
+        />
       </Routes>
     </div>
   );
