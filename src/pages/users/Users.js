@@ -13,6 +13,7 @@ function Users() {
   async function fetchData() {
     const res = await axios.get(`${API_URL}/users?_embed=orders`);
     setUsers(res.data);
+    console.log(res.data);
   }
 
   useEffect(() => {
@@ -25,7 +26,7 @@ function Users() {
         <ul>
           {users.map((user) => (
             <li className="user-name" key={user.id}>
-              <Link className="users-link" to={`/users/${user.id}`}>
+              <Link to={`/users/${user.id}`} className="users-link">
                 {user.name}(Užsakymų skaičius {user.orders.length})
               </Link>
             </li>

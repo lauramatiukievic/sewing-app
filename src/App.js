@@ -19,13 +19,15 @@ function App() {
       <Routes>
         <Route path="/home" element={<Home>Pradžia</Home>} />
         <Route path="/users" element={<Users>Vartotojai</Users>} />
-        <Route path="/users:id" element={<User>Vartotojas</User>} />
+        <Route path="/users/:id" element={<User>Vartotojas</User>} />
         <Route path="/clothes" element={<Clothes>Drabužiai</Clothes>} />
-        <Route path="/clothes:id" element={<Clothing>Drabužis</Clothing>} />
+        <Route path="/clothes/:id" element={<Clothing>Drabužis</Clothing>} />
         <Route path="/clothes" element={<Clothes>Drabužiai</Clothes>} />
         <Route path="/serveses" element={<Serveses>Paslaugos</Serveses>} />
-        <Route path="/serveses:id" element={<Serves>Paslauga</Serves>} />
+        <Route path="/serveses/:id" element={<Serves>Paslauga</Serves>} />
+
         <Route path="/orders" element={<Orders>Užsakymai</Orders>} />
+        <Route path="/orders/:id" element={<Orders>Vieno vartpotojo užsakymai</Orders>} />
         <Route path="/search" element={<Search>Paieška</Search>} />
 
         <Route
