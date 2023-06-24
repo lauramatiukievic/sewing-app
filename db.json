@@ -1,0 +1,39 @@
+{
+  "users": [
+    {
+      "id": 1,
+      "name": "Laura Matiuk",
+      "email": "ermelinda990@gmail.com",
+      "phone": "86453635278"
+    }
+  ],
+  "clothes": [
+    {
+      "id": 1,
+      "name": "Sijonas",
+      "size": "M",
+      "gender": "Moteriskas",
+      "fabric": "Trikotazinis",
+      "color": "Juodas",
+      "userId": 1,
+      "photo": "https://m.media-amazon.com/images/I/61ZETrfhTeL._AC_UX679_.jpg"
+    }
+  ],
+  "services": [
+    {
+      "id": 1,
+      "title": "Kelniu trumpinimas",
+      "body": "Kelniu trumpinimas reikalingo ilgo, kelniu galu tvarkymas, uzsiuvimas",
+      "price": 5
+    }
+  ],
+  "orders": [
+    {
+      "id": 1,
+      "userId": 1,
+      "clothesId": 1,
+      "servicesId": 1,
+      "body": "Kelniu galai yra nevienodo ilgio"
+    }
+  ]
+}
