@@ -39,7 +39,7 @@ function Order() {
 
   return (
     <Container>
-      <div>
+      <div className="order-info">
         <h2>
           Vartotojas: <Link to={`/users/${order.user.id}`}>{order.user.name}</Link>
         </h2>
