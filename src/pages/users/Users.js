@@ -4,6 +4,7 @@ import axios from "axios";
 import { API_URL } from "../../config";
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
+import { RingLoader } from "react-spinners";
 
 import Container from "../../components/container/Container";
 
@@ -19,6 +20,10 @@ function Users() {
   useEffect(() => {
     fetchData();
   }, []);
+
+  if (!users) {
+    return <RingLoader color="rgba(214, 142, 54, 1)" />;
+  }
 
   return (
     <Container>

@@ -6,11 +6,11 @@ import Users from "./pages/users/Users";
 import User from "./pages/user/User";
 import Clothes from "./pages/clothes/Clothes";
 import Clothing from "./pages/clothing/Clothing";
-import Serveses from "./pages/serveses/Serveses";
-import Serves from "./pages/serves/Serves";
 import Orders from "./pages/orders/Orders";
 import Search from "./pages/search/Search";
 import Navigation from "./components/navigation/Navigation";
+import Services from "./pages/services/Services";
+import Service from "./pages/service/Service";
 
 function App() {
   return (
@@ -23,8 +23,8 @@ function App() {
         <Route path="/clothes" element={<Clothes>Drabužiai</Clothes>} />
         <Route path="/clothes/:id" element={<Clothing>Drabužis</Clothing>} />
         <Route path="/clothes" element={<Clothes>Drabužiai</Clothes>} />
-        <Route path="/serveses" element={<Serveses>Paslaugos</Serveses>} />
-        <Route path="/serveses/:id" element={<Serves>Paslauga</Serves>} />
+        <Route path="/services" element={<Services>Paslaugos</Services>} />
+        <Route path="/services/:id" element={<Service>Paslauga</Service>} />
 
         <Route path="/orders" element={<Orders>Užsakymai</Orders>} />
         <Route path="/orders/:id" element={<Orders>Vieno vartpotojo užsakymai</Orders>} />
