@@ -11,7 +11,7 @@ import Container from "../../components/container/Container";
 function Clothes() {
   const [clothes, setClothes] = useState([]);
   async function fetchData() {
-    const res = await axios.get(`${API_URL}/clothes/?_expand=user&_embed=services`);
+    const res = await axios.get(`${API_URL}/clothes/?_expand=user`);
     setClothes(res.data);
   }
 
@@ -31,15 +31,11 @@ function Clothes() {
           <div key={clothing.id}>
             <div>
               <span>Vartotojas:</span>
-              <Link> {clothing.user.name}</Link>
+              <Link to={`/users/${clothing.user.id}`}> {clothing.user.name}</Link>
             </div>
             <div>
               <span>Drabužis: </span>
-              <Link>{clothing.name}</Link>
-            </div>
-            <div>
-              <span>Paslauga: </span>
-              {/* <Link>{clothing.id.title}</Link> */}
+              <Link to={`/clothes/${clothing.id}`}>{clothing.name}</Link>
             </div>
           </div>
         ))}
