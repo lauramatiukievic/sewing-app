@@ -1,19 +1,21 @@
 import { Routes, Route, Link } from "react-router-dom";
 import "./App.css";
 
-import Home from "./pages/hoem/Home";
+import Home from "./pages/home/Home";
 import Users from "./pages/users/Users";
 import User from "./pages/user/User";
 import Clothes from "./pages/clothes/Clothes";
 import Clothing from "./pages/clothing/Clothing";
-import Serveses from "./pages/serveses/serveses";
+import Serveses from "./pages/serveses/Serveses";
 import Serves from "./pages/serves/Serves";
-import Orders from "./pages/orders/orders";
+import Orders from "./pages/orders/Orders";
 import Search from "./pages/search/Search";
+import Navigation from "./components/navigation/Navigation";
 
 function App() {
   return (
     <div className="App">
+      <Navigation />
       <Routes>
         <Route path="/home" element={<Home>Pradžia</Home>} />
         <Route path="/users" element={<Users>Vartotojai</Users>} />
