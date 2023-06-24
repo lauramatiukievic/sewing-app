@@ -7,6 +7,7 @@ import User from "./pages/user/User";
 import Clothes from "./pages/clothes/Clothes";
 import Clothing from "./pages/clothing/Clothing";
 import Orders from "./pages/orders/Orders";
+import Order from "./components/order/Order";
 import Search from "./pages/search/Search";
 import Navigation from "./components/navigation/Navigation";
 import Services from "./pages/services/Services";
@@ -26,7 +27,8 @@ function App() {
         <Route path="/services" element={<Services>Paslaugos</Services>} />
 
         <Route path="/orders" element={<Orders>Užsakymai</Orders>} />
-        <Route path="/orders/:id" element={<Orders>Vieno vartpotojo užsakymai</Orders>} />
+        <Route path="/order/:id" element={<Orders>Vieno vartpotojo užsakymai</Orders>} />
+        <Route path="/orders/:id" element={<Order>Užsakymai</Order>} />
 
         <Route path="/search" element={<Search>Paieška</Search>} />
 
