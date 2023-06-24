@@ -10,7 +10,6 @@ import Orders from "./pages/orders/Orders";
 import Search from "./pages/search/Search";
 import Navigation from "./components/navigation/Navigation";
 import Services from "./pages/services/Services";
-import Service from "./pages/service/Service";
 
 function App() {
   return (
@@ -25,7 +24,6 @@ function App() {
         <Route path="/clothes/:id" element={<Clothing>Drabužis</Clothing>} />
 
         <Route path="/services" element={<Services>Paslaugos</Services>} />
-        <Route path="/services/:id" element={<Service>Paslauga</Service>} />
 
         <Route path="/orders" element={<Orders>Užsakymai</Orders>} />
         <Route path="/orders/:id" element={<Orders>Vieno vartpotojo užsakymai</Orders>} />
