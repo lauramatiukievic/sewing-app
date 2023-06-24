@@ -26,7 +26,7 @@ function Navigation() {
           </NavLink>
         </li>
         <li className="nav-list">
-          <NavLink className="nav-link" to="/serveses">
+          <NavLink className="nav-link" to="/services">
             Paslaugos
           </NavLink>
         </li>
