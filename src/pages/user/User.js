@@ -43,7 +43,7 @@ function User() {
         alert(`${user.name} was deleted`);
       })
       .catch((error) => {
-        alert("Klaida koreguojant drabužį");
+        alert("Nepavyksta ištrinti vartotojo");
       });
   };
 
@@ -58,7 +58,7 @@ function User() {
         <>
           {isEdit && <UserForm user={user} onEdit={editUser}></UserForm>}
           <button className="delete-data" onClick={userDeleteHandler}>
-            Delete User
+            Ištrinti vartotoją
           </button>
           <div className="user-info">
             <h2>Vartotojo informacija:</h2>

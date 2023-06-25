@@ -39,16 +39,6 @@
   ],
   "clothings": [
     {
-      "id": 1,
-      "name": "kelness",
-      "size": "Ls",
-      "gender": "Vyrass",
-      "fabric": "Dzinsass",
-      "color": "Melynas",
-      "photo": "https://www.vilkpedesbustas.lt/uploads/D%C5%BEinsai-vyrams-mados-vyri%C5%A1kos-keln%C4%97s-slim-d%C5%BEinsinio/54505-1.jpeg",
-      "userId": 3
-    },
-    {
       "id": 2,
       "name": "kelness",
       "size": "Ls",
@@ -57,16 +47,6 @@
       "color": "Melynas",
       "photo": "https://www.vilkpedesbustas.lt/uploads/D%C5%BEinsai-vyrams-mados-vyri%C5%A1kos-keln%C4%97s-slim-d%C5%BEinsinio/54505-1.jpeg",
       "userId": 3
-    },
-    {
-      "id": 3,
-      "name": "aaa",
-      "size": "aaa",
-      "gender": "aaa",
-      "fabric": "aaa",
-      "color": "aaa",
-      "photo": "https://www.vilkpedesbustas.lt/uploads/D%C5%BEinsai-vyrams-mados-vyri%C5%A1kos-keln%C4%97s-slim-d%C5%BEinsinio/54505-1.jpeg",
-      "userId": 2
     }
   ],
   "services": [
