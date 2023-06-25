@@ -1,12 +1,6 @@
 {
   "users": [
     {
-      "id": 1,
-      "name": "Laura Matiuk",
-      "email": "ermelinda990@gmail.com",
-      "phone": "86453635278"
-    },
-    {
       "name": "asd",
       "email": "ermelinda990@gmail.com",
       "phone": "5746764864",
@@ -19,22 +13,10 @@
       "id": 3
     },
     {
-      "id": 4,
-      "name": "Laura",
-      "phone": "57467648644444",
-      "email": "ermelinda990@gmail.com"
-    },
-    {
       "name": "Laura",
       "email": "ermelinda990@gmail.com",
       "phone": "5746764864",
       "id": 5
-    },
-    {
-      "name": "Laura",
-      "email": "ermelinda990@gmail.com",
-      "phone": "5746764864",
-      "id": 6
     }
   ],
   "clothings": [
@@ -50,12 +32,6 @@
     }
   ],
   "services": [
-    {
-      "id": 1,
-      "title": "Sijono trumpinimas",
-      "body": "Sijono trumpinimas reikalingo ilgo, kelniu galu tvarkymas, uzsiuvimas",
-      "price": 5
-    },
     {
       "title": "Kelniu lopinimas",
       "body": "Dydelių skylių apdirbimas",
@@ -88,13 +64,6 @@
     }
   ],
   "orders": [
-    {
-      "id": 1,
-      "clothingId": 1,
-      "userId": 1,
-      "serviceId": 1,
-      "body": "Sijono galai yra nevienodo ilgio"
-    },
     {
       "id": 2,
       "userId": 3,
