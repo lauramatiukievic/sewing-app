@@ -40,7 +40,7 @@ function User() {
       .then((res) => {
         console.log(res.data);
         setUserDeleted(true);
-        alert(`${user.name} was deleted`);
+        alert(`${user.name} buvo ištrintas`);
       })
       .catch((error) => {
         alert("Nepavyksta ištrinti vartotojo");

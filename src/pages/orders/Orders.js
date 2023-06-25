@@ -45,7 +45,6 @@ function Orders() {
       <OrderForm onCreate={createOrder} />
       {orders.map((order) => (
         <div key={order.id}>
-          <Link to={`/orders/${order.id}`}>Užsakymas(1)</Link>
           <h2>
             Vartotojas: <Link to={`/users/${order.user.id}`}>{order.user.name}</Link>
           </h2>

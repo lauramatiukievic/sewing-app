@@ -1,75 +1,39 @@
 {
   "users": [
     {
-      "name": "asd",
+      "id": 1,
+      "name": "Laura Matiuk",
       "email": "ermelinda990@gmail.com",
-      "phone": "5746764864",
-      "id": 2
-    },
-    {
-      "name": "Laura",
-      "email": "ermelinda990@gmail.com",
-      "phone": "5746764864",
-      "id": 3
-    },
-    {
-      "name": "Laura",
-      "email": "ermelinda990@gmail.com",
-      "phone": "5746764864",
-      "id": 5
+      "phone": "86453635278"
     }
   ],
   "clothings": [
     {
-      "id": 2,
-      "name": "kelness",
-      "size": "Ls",
-      "gender": "Vyrass",
-      "fabric": "Dzinsass",
-      "color": "Melynas",
-      "photo": "https://www.vilkpedesbustas.lt/uploads/D%C5%BEinsai-vyrams-mados-vyri%C5%A1kos-keln%C4%97s-slim-d%C5%BEinsinio/54505-1.jpeg",
-      "userId": 3
+      "id": 1,
+      "name": "Sijonas",
+      "size": "M",
+      "gender": "Moteriskas",
+      "fabric": "Trikotazinis",
+      "color": "Juodas",
+      "userId": 1,
+      "photo": "https://m.media-amazon.com/images/I/61ZETrfhTeL._AC_UX679_.jpg"
     }
   ],
   "services": [
     {
-      "title": "Kelniu lopinimas",
-      "body": "Dydelių skylių apdirbimas",
-      "price": "10",
-      "id": 2
-    },
-    {
-      "title": "Sagu siuvimas",
-      "body": "Sagu parinikimas, sagu pritaikymas, sagu siuvimas",
-      "price": "3",
-      "id": 3
-    },
-    {
-      "title": "Dekoravimas",
-      "body": "Piestinis dekoravimas",
-      "price": "15",
-      "id": 4
-    },
-    {
-      "id": 5,
-      "title": "Siuvinejima",
-      "body": "Ornamentu siuvinejima",
-      "price": "20"
-    },
-    {
-      "id": 6,
-      "title": "nauja",
-      "body": "nauja",
-      "price": "35"
+      "id": 1,
+      "title": "Kelniu trumpinimas",
+      "body": "Kelniu trumpinimas reikalingo ilgo, kelniu galu tvarkymas, uzsiuvimas",
+      "price": 5
     }
   ],
   "orders": [
     {
       "id": 2,
-      "userId": 3,
-      "clothingId": 3,
-      "serviceId": 3,
-      "body": "Dydelių skylių apdir"
+      "userId": 1,
+      "clothingId": 1,
+      "serviceId": 1,
+      "body": "Dydelių skylių apdirbimas"
     }
   ]
 }
