@@ -10,7 +10,7 @@ import Container from "../../components/container/Container";
 
 function Clothing() {
   const { id } = useParams();
-  const [clothing, setClothing] = useState([]);
+  const [clothing, setClothing] = useState(null);
 
   async function fetchData() {
     const res = await axios.get(`${API_URL}/clothings/${id}?_expand=user`);
@@ -30,7 +30,7 @@ function Clothing() {
     <Container>
       <div className="clothing-info">
         <h2>Drabužio informacija:</h2>
-        {/* <h4>Vartotojo vardas: {clothing.user.name}</h4> */}
+        <h4>Vartotojo vardas: {clothing.user.name}</h4>
         <h4>Registruojamas drabužis: {clothing.name}</h4>
         <div className="clothing-data">
           <h3>Drabužio charakteristika:</h3>
