@@ -8,6 +8,7 @@ import { RingLoader } from "react-spinners";
 
 import Container from "../../components/container/Container";
 import { Link } from "react-router-dom";
+import OrderForm from "../../components/orderForm/OrderForm";
 
 function Orders() {
   const [orders, setOrders] = useState([]);
@@ -23,7 +24,7 @@ function Orders() {
         }));
         console.log(ordersWithClothings);
 
-        setOrders(ordersWithClothings);
+        setOrders(ordersWithClothings.toReversed());
       });
     });
   }
@@ -35,11 +36,16 @@ function Orders() {
   if (!orders) {
     return <RingLoader color="rgba(214, 142, 54, 1)" />;
   }
+
+  let createOrder = (order) => {
+    fetchData();
+  };
   return (
     <Container>
+      <OrderForm onCreate={createOrder} />
       {orders.map((order) => (
         <div key={order.id}>
-          <Link to={`/order/${order.id}`}>Užsakymas(1)</Link>
+          <Link to={`/orders/${order.id}`}>Užsakymas(1)</Link>
           <h2>
             Vartotojas: <Link to={`/users/${order.user.id}`}>{order.user.name}</Link>
           </h2>

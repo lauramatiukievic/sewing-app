@@ -6,12 +6,17 @@ import { useState } from "react";
 
 function ClothingForm(props) {
   const [users, setUsers] = useState([]);
+
+  const getDefaultValues = () => {
+    return { defaultValues: { userId: "" } };
+  };
+
   const {
     register,
     handleSubmit,
     reset,
     formState: { errors },
-  } = useForm();
+  } = useForm(getDefaultValues());
 
   useEffect(() => {
     axios.get(`${API_URL}/users`).then((res) => {
@@ -42,9 +47,13 @@ function ClothingForm(props) {
     <form className="user-form" onSubmit={handleSubmit(onSubmit)}>
       <div className="form-select">
         {" "}
-        <select name="userId" {...register("userId", { required: true })}>
+        <select name="userId" {...register("userId", { required: true, setValueAs: (value) => Number(value) })}>
+          <option value="" disabled>
+            Pasirinkite vartotoja
+          </option>
           {usersOptionEl}
         </select>
+        {errors && errors.userId && <span> Užpildyti privaloma!</span>}
       </div>
 
       <div className="form-input">
@@ -58,35 +67,35 @@ function ClothingForm(props) {
         <label>
           Dydis:
           <input {...register("size", { required: true })} />
-          {errors && errors.email && <span> Užpildyti privaloma!</span>}
+          {errors && errors.size && <span> Užpildyti privaloma!</span>}
         </label>
       </div>
       <div className="form-input">
         <label>
           Nešiotojas:
           <input {...register("gender", { required: true })} />
-          {errors && errors.phone && <span> Užpildyti privaloma!</span>}
+          {errors && errors.gender && <span> Užpildyti privaloma!</span>}
         </label>
       </div>
       <div className="form-input">
         <label>
           Audinys:
           <input {...register("fabric", { required: true })} />
-          {errors && errors.phone && <span> Užpildyti privaloma!</span>}
+          {errors && errors.fabric && <span> Užpildyti privaloma!</span>}
         </label>
       </div>
       <div className="form-input">
         <label>
           Spalva:
           <input {...register("color", { required: true })} />
-          {errors && errors.phone && <span> Užpildyti privaloma!</span>}
+          {errors && errors.color && <span> Užpildyti privaloma!</span>}
         </label>
       </div>
       <div className="form-input">
         <label>
           Nuotrauka:
           <input {...register("photo", { required: true })} />
-          {errors && errors.phone && <span> Užpildyti privaloma!</span>}
+          {errors && errors.photo && <span> Užpildyti privaloma!</span>}
         </label>
       </div>
       <input type="submit" />
