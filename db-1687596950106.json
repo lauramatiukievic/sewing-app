@@ -7,7 +7,7 @@
       "phone": "86453635278"
     }
   ],
-  "clothes": [
+  "clothings": [
     {
       "id": 1,
       "name": "Sijonas",
@@ -31,8 +31,8 @@
     {
       "id": 1,
       "userId": 1,
-      "clothesId": 1,
-      "servicesId": 1,
+      "clothingId": 1,
+      "serviceId": 1,
       "body": "Kelniu galai yra nevienodo ilgio"
     }
   ]

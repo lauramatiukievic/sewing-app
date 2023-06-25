@@ -41,7 +41,7 @@ function Clothing() {
       .then((res) => {
         console.log(res.data);
         setUserDeleted(true);
-        alert(`${clothing.name} was deleted`);
+        alert(`${clothing.name} buvo ištrintas`);
       })
       .catch((error) => {
         alert("Nepavyksta ištrinti drabužio");

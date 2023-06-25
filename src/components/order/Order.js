@@ -14,6 +14,7 @@ function Order() {
   const { id } = useParams();
   const [order, setOrder] = useState(null);
   const [isEdit, setIsEdit] = useState(false);
+  const [orderDeleted, setOrderDeleted] = useState(false);
 
   async function fetchData() {
     axios.get(`${API_URL}/orders/${id}?_expand=user&_expand=service`).then((response) => {
@@ -43,24 +44,48 @@ function Order() {
     fetchData();
     setIsEdit(false);
   };
+  const orderDeleteHandler = () => {
+    axios
+      .delete(`${API_URL}/orders/${id}`)
+      .then((res) => {
+        console.log(res.data);
+        setOrderDeleted(true);
+        alert(`Užsakymas buvo ištrintas`);
+      })
+      .catch((error) => {
+        alert("Nepavyksta ištrinti užsakymo");
+      });
+  };
 
   return (
     <Container>
-      {isEdit && <OrderForm order={order} onEdit={editOrder} />}
-      <div className="order-info">
-        <h2>
-          Vartotojas: <Link to={`/users/${order.user.id}`}>{order.user.name}</Link>
-        </h2>
-        <h2>
-          Drabužis:<Link to={`/clothes/${order.clothing.id}`}> {order.clothing[0].name}</Link>
-        </h2>
-        <h3>
-          Paslauga: <Link to={`/services/${order.service.id}`}> {order.service.title}</Link>
-        </h3>
-        <p>Užsakymo aprašymas: {order.body}</p>
+      {orderDeleted ? (
+        <>
+          <h1>Užsakymas ištrintas</h1>
+          <Link to={"/orders"}>Grįžti į užsakymų sąrašą</Link>
+        </>
+      ) : (
+        <>
+          {isEdit && <OrderForm order={order} onEdit={editOrder} />}
+          <button className="delete-data" onClick={orderDeleteHandler}>
+            Ištrinti užsakymą
+          </button>
+          <div className="order-info">
+            <h2>
+              Vartotojas: <Link to={`/users/${order.user.id}`}>{order.user.name}</Link>
+            </h2>
+            <h2>
+              Drabužis:<Link to={`/clothes/${order.clothing.id}`}> {order.clothing[0].name}</Link>
+            </h2>
+            <h3>
+              Paslauga: <Link to={`/services/${order.service.id}`}> {order.service.title}</Link>
+            </h3>
+            <p>Užsakymo aprašymas: {order.body}</p>
 
-        {!isEdit && <button onClick={() => setIsEdit(true)}>Koreguoti užsakymą</button>}
-      </div>
+            {!isEdit && <button onClick={() => setIsEdit(true)}>Koreguoti užsakymą</button>}
+          </div>
+        </>
+      )}
     </Container>
   );
 }
