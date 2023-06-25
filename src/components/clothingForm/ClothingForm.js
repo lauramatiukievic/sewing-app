@@ -4,11 +4,16 @@ import axios from "axios";
 import { API_URL } from "../../config";
 import { useState } from "react";
 
-function ClothingForm(props) {
+function ClothingForm({ clothing, onCreate, onEdit }) {
   const [users, setUsers] = useState([]);
 
   const getDefaultValues = () => {
-    return { defaultValues: { userId: "" } };
+    if (clothing) {
+      const { id, name, size, gender, fabric, color, photo, userId } = clothing;
+      return { defaultValues: { id: id, name: name, size: size, gender: gender, fabric: fabric, color: color, photo: photo, userId: userId } };
+    } else {
+      return { defaultValues: { userId: "", id: "", name: "", size: "", gender: "", fabric: "", color: "", photo: "" } };
+    }
   };
 
   const {
@@ -25,17 +30,29 @@ function ClothingForm(props) {
   }, []);
 
   const onSubmit = (data) => {
-    axios
-      .post(`${API_URL}/clothings`, data)
-      .then((response) => {
-        const createdClothing = response.data;
-        props.onCreate(createdClothing);
-        alert("Drabužis sukurtas!");
-      })
-      .catch((error) => {
-        alert("Klaida kuriant drabužį");
-      });
-    reset();
+    if (clothing) {
+      axios
+        .put(`${API_URL}/clothings/${clothing.id}`, data)
+        .then(() => {
+          onEdit();
+          alert("Drabužis pakoreguotas");
+        })
+        .catch((error) => {
+          alert("Klaida koreguojant drabužį");
+        });
+    } else {
+      axios
+        .post(`${API_URL}/clothings`, data)
+        .then((response) => {
+          const createdClothing = response.data;
+          onCreate(createdClothing);
+          alert("Drabužis sukurtas!");
+        })
+        .catch((error) => {
+          alert("Klaida kuriant drabužį");
+        });
+      reset();
+    }
   };
 
   const usersOptionEl = users.map((user) => (
@@ -98,7 +115,8 @@ function ClothingForm(props) {
           {errors && errors.photo && <span> Užpildyti privaloma!</span>}
         </label>
       </div>
-      <input type="submit" />
+
+      {clothing ? <input type="submit" value="Išsaugoti drabužį" /> : <input type="submit" value="Sukurti drabužį" />}
     </form>
   );
 }

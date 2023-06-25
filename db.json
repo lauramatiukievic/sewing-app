@@ -39,34 +39,24 @@
   ],
   "clothings": [
     {
-      "id": 1,
-      "name": "Sijonas",
-      "size": "M",
-      "gender": "Moteriskas",
-      "fabric": "Trikotazinis",
-      "color": "Juodas",
-      "userId": 1,
-      "photo": "https://m.media-amazon.com/images/I/61ZETrfhTeL._AC_UX679_.jpg"
+      "id": 2,
+      "name": "kelness",
+      "size": "Ls",
+      "gender": "Vyrass",
+      "fabric": "Dzinsass",
+      "color": "Melynas",
+      "photo": "https://www.vilkpedesbustas.lt/uploads/D%C5%BEinsai-vyrams-mados-vyri%C5%A1kos-keln%C4%97s-slim-d%C5%BEinsinio/54505-1.jpeg",
+      "userId": 3
     },
     {
-      "userId": 3,
-      "name": "kelnes",
-      "size": "L",
-      "gender": "Vyras",
-      "fabric": "Dzinsas",
-      "color": "Melyna",
+      "id": 3,
+      "name": "aaa",
+      "size": "aaa",
+      "gender": "aaa",
+      "fabric": "aaa",
+      "color": "aaa",
       "photo": "https://www.vilkpedesbustas.lt/uploads/D%C5%BEinsai-vyrams-mados-vyri%C5%A1kos-keln%C4%97s-slim-d%C5%BEinsinio/54505-1.jpeg",
-      "id": 2
-    },
-    {
-      "userId": 3,
-      "name": "Sijonas",
-      "size": "L",
-      "gender": "Vyras",
-      "fabric": "Dzinsas",
-      "color": "Melyna",
-      "photo": "https://www.vilkpedesbustas.lt/uploads/D%C5%BEinsai-vyrams-mados-vyri%C5%A1kos-keln%C4%97s-slim-d%C5%BEinsinio/54505-1.jpeg",
-      "id": 3
+      "userId": 2
     }
   ],
   "services": [
