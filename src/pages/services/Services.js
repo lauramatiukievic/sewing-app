@@ -7,6 +7,7 @@ import { useEffect, useState } from "react";
 import { RingLoader } from "react-spinners";
 
 import Container from "../../components/container/Container";
+import ServiceForm from "../../components/serviceForm/ServiceForm";
 
 function Services() {
   const [services, setServices] = useState([]);
@@ -23,9 +24,13 @@ function Services() {
   if (!services) {
     return <RingLoader color="rgba(214, 142, 54, 1)" />;
   }
+  let createService = (service) => {
+    setServices((services) => [...services, service]);
+  };
 
   return (
     <Container>
+      <ServiceForm onCreate={createService} />
       {services.map((service) => (
         <div className="service-info" key={service.id}>
           <h2>Paslaugos pavadinimas: {service.title}</h2>

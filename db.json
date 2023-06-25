@@ -83,6 +83,12 @@
       "title": "Sijono trumpinimas",
       "body": "Sijono trumpinimas reikalingo ilgo, kelniu galu tvarkymas, uzsiuvimas",
       "price": 5
+    },
+    {
+      "title": "Kelniu lopinimas",
+      "body": "Dydelių skylių apdirbimas",
+      "price": "10",
+      "id": 2
     }
   ],
   "orders": [

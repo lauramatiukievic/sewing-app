@@ -9,6 +9,7 @@ function ClothingForm(props) {
   const {
     register,
     handleSubmit,
+    reset,
     formState: { errors },
   } = useForm();
 
@@ -29,6 +30,7 @@ function ClothingForm(props) {
       .catch((error) => {
         alert("Klaida kuriant drabužį");
       });
+    reset();
   };
 
   const usersOptionEl = users.map((user) => (

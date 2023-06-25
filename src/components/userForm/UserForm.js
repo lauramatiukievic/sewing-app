@@ -7,6 +7,7 @@ function UserForm(props) {
   const {
     register,
     handleSubmit,
+    reset,
     formState: { errors },
   } = useForm();
 
@@ -21,6 +22,7 @@ function UserForm(props) {
       .catch((error) => {
         alert("Klaida kuriant vartotoja");
       });
+    reset();
   };
 
   return (
