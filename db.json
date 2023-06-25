@@ -23,6 +23,18 @@
       "email": "ermelinda990@gmail.com",
       "phone": "5746764864",
       "id": 4
+    },
+    {
+      "name": "Laura",
+      "email": "ermelinda990@gmail.com",
+      "phone": "5746764864",
+      "id": 5
+    },
+    {
+      "name": "Laura",
+      "email": "ermelinda990@gmail.com",
+      "phone": "5746764864",
+      "id": 6
     }
   ],
   "clothings": [
@@ -37,44 +49,24 @@
       "photo": "https://m.media-amazon.com/images/I/61ZETrfhTeL._AC_UX679_.jpg"
     },
     {
-      "userId": "1",
-      "name": "Kelnes",
+      "userId": 3,
+      "name": "kelnes",
       "size": "L",
-      "gender": "Moteris",
+      "gender": "Vyras",
       "fabric": "Dzinsas",
       "color": "Melyna",
       "photo": "https://www.vilkpedesbustas.lt/uploads/D%C5%BEinsai-vyrams-mados-vyri%C5%A1kos-keln%C4%97s-slim-d%C5%BEinsinio/54505-1.jpeg",
       "id": 2
     },
     {
-      "userId": "1",
-      "name": "a",
-      "size": "a",
-      "gender": "a",
-      "fabric": "a",
-      "color": "a",
+      "userId": 3,
+      "name": "Sijonas",
+      "size": "L",
+      "gender": "Vyras",
+      "fabric": "Dzinsas",
+      "color": "Melyna",
       "photo": "https://www.vilkpedesbustas.lt/uploads/D%C5%BEinsai-vyrams-mados-vyri%C5%A1kos-keln%C4%97s-slim-d%C5%BEinsinio/54505-1.jpeg",
       "id": 3
-    },
-    {
-      "userId": "2",
-      "name": "a",
-      "size": "a",
-      "gender": "a",
-      "fabric": "a",
-      "color": "a",
-      "photo": "https://www.vilkpedesbustas.lt/uploads/D%C5%BEinsai-vyrams-mados-vyri%C5%A1kos-keln%C4%97s-slim-d%C5%BEinsinio/54505-1.jpeg",
-      "id": 4
-    },
-    {
-      "userId": "2",
-      "name": "a",
-      "size": "a",
-      "gender": "a",
-      "fabric": "a",
-      "color": "a",
-      "photo": "https://www.vilkpedesbustas.lt/uploads/D%C5%BEinsai-vyrams-mados-vyri%C5%A1kos-keln%C4%97s-slim-d%C5%BEinsinio/54505-1.jpeg",
-      "id": 5
     }
   ],
   "services": [
@@ -89,6 +81,24 @@
       "body": "Dydelių skylių apdirbimas",
       "price": "10",
       "id": 2
+    },
+    {
+      "title": "Sagu siuvimas",
+      "body": "Sagu parinikimas, sagu pritaikymas, sagu siuvimas",
+      "price": "3",
+      "id": 3
+    },
+    {
+      "title": "Dekoravimas",
+      "body": "Piestinis dekoravimas",
+      "price": "15",
+      "id": 4
+    },
+    {
+      "title": "Siuvinejimas",
+      "body": "Ornamentu siuvinejimas",
+      "price": "20",
+      "id": 5
     }
   ],
   "orders": [
@@ -98,6 +108,48 @@
       "userId": 1,
       "serviceId": 1,
       "body": "Sijono galai yra nevienodo ilgio"
+    },
+    {
+      "userId": 3,
+      "clothingId": 2,
+      "serviceId": 2,
+      "body": "Dydelių skylių apdirbimas",
+      "id": 2
+    },
+    {
+      "userId": 1,
+      "clothingId": 2,
+      "serviceId": 1,
+      "body": "Dydelių skylių apdirbimas",
+      "id": 3
+    },
+    {
+      "userId": 2,
+      "clothingId": 2,
+      "serviceId": 2,
+      "body": "Dydelių skylių apdirbimas",
+      "id": 4
+    },
+    {
+      "userId": 3,
+      "clothingId": 2,
+      "serviceId": 2,
+      "body": "Dydelių skylių apdirbimas",
+      "id": 5
+    },
+    {
+      "userId": 1,
+      "clothingId": 1,
+      "serviceId": 1,
+      "body": "Dydelių skylių apdirbimas",
+      "id": 6
+    },
+    {
+      "userId": 2,
+      "clothingId": 2,
+      "serviceId": 2,
+      "body": "Dydelių skylių apdirbimas",
+      "id": 7
     }
   ]
 }

@@ -14,7 +14,7 @@ function Services() {
 
   async function fetchData() {
     const res = await axios.get(`${API_URL}/services`);
-    setServices(res.data);
+    setServices(res.data.toReversed());
   }
 
   useEffect(() => {
@@ -25,7 +25,7 @@ function Services() {
     return <RingLoader color="rgba(214, 142, 54, 1)" />;
   }
   let createService = (service) => {
-    setServices((services) => [...services, service]);
+    setServices((services) => [service, ...services]);
   };
 
   return (

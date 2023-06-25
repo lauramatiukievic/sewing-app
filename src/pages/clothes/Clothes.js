@@ -13,7 +13,7 @@ function Clothes() {
   const [clothes, setClothes] = useState(null);
   async function fetchData() {
     const res = await axios.get(`${API_URL}/clothings?_expand=user`);
-    setClothes(res.data);
+    setClothes(res.data.toReversed());
     console.log(res.data);
   }
 
@@ -24,7 +24,7 @@ function Clothes() {
     return <RingLoader color="rgba(214, 142, 54, 1)" />;
   }
   let createClothing = (clothing) => {
-    setClothes((clothes) => [...clothes, clothing]);
+    fetchData();
   };
 
   return (

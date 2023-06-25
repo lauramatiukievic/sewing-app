@@ -14,7 +14,7 @@ function Users() {
 
   async function fetchData() {
     const res = await axios.get(`${API_URL}/users?_embed=orders`);
-    setUsers(res.data);
+    setUsers(res.data.toReversed());
     console.log(res.data);
   }
 
