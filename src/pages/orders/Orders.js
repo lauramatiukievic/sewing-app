@@ -11,7 +11,7 @@ import { Link } from "react-router-dom";
 import OrderForm from "../../components/orderForm/OrderForm";
 
 function Orders() {
-  const [orders, setOrders] = useState([]);
+  const [orders, setOrders] = useState(null);
 
   async function fetchData() {
     axios.get(`${API_URL}/orders?_expand=user&_expand=service`).then((response) => {
