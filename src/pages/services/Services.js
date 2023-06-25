@@ -3,6 +3,7 @@ import axios from "axios";
 
 import { API_URL } from "../../config";
 import { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 
 import { RingLoader } from "react-spinners";
 
@@ -33,7 +34,9 @@ function Services() {
       <ServiceForm onCreate={createService} />
       {services.map((service) => (
         <div className="service-info" key={service.id}>
-          <h2>Paslaugos pavadinimas: {service.title}</h2>
+          {" "}
+          <h2>Paslaugos pavadinimas: </h2>
+          <Link to={`/services/${service.id}`}>{service.title}</Link>
           <p>Paslaugos aprašymas:{service.body}</p>
           <p>Paslaugos kaina: {service.price} e.</p>
         </div>

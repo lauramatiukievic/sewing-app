@@ -3,26 +3,47 @@ import { useForm } from "react-hook-form";
 import axios from "axios";
 import { API_URL } from "../../config";
 
-function ServiceForm(props) {
+function ServiceForm({ service, onCreate, onEdit }) {
+  const getDefaultValues = () => {
+    if (service) {
+      const { id, title, body, price } = service;
+      return { defaultValues: { id: id, title: title, body: body, price: price } };
+    } else {
+      return { defaultValues: { title: "", body: "", email: "" } };
+    }
+  };
+
   const {
     register,
     handleSubmit,
     reset,
     formState: { errors },
-  } = useForm();
+  } = useForm(getDefaultValues());
 
   const onSubmit = (data) => {
-    axios
-      .post(`${API_URL}/services`, data)
-      .then((response) => {
-        const createdService = response.data;
-        props.onCreate(createdService);
-        alert("Paslauga sukurtas!");
-      })
-      .catch((error) => {
-        alert("Klaida kuriant paslauga");
-      });
-    reset();
+    if (service) {
+      axios
+        .put(`${API_URL}/services/${service.id}`, data)
+        .then(() => {
+          onEdit();
+          alert("Paslauga pakoreguota");
+        })
+        .catch((error) => {
+          alert("Klaida kuriant paslaugą");
+        });
+    } else {
+      axios
+        .post(`${API_URL}/services`, data)
+        .then((response) => {
+          const createdService = response.data;
+          onCreate(createdService);
+          alert("Paslauga sukurta!");
+        })
+        .catch((error) => {
+          alert("Klaida kuriant paslauga");
+        });
+      reset();
+    }
   };
   return (
     <form className="user-form" onSubmit={handleSubmit(onSubmit)}>
@@ -47,7 +68,8 @@ function ServiceForm(props) {
           {errors && errors.price && <span> Užpildyti privaloma!</span>}
         </label>
       </div>
-      <input type="submit" />
+
+      {service ? <input type="submit" value="Išsaugoti paslaugą" /> : <input type="submit" value="Sukurti paslaugą" />}
     </form>
   );
 }

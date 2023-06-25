@@ -85,10 +85,16 @@
       "id": 4
     },
     {
-      "title": "Siuvinejimas",
-      "body": "Ornamentu siuvinejimas",
-      "price": "20",
-      "id": 5
+      "id": 5,
+      "title": "Siuvinejima",
+      "body": "Ornamentu siuvinejima",
+      "price": "20"
+    },
+    {
+      "id": 6,
+      "title": "nauja",
+      "body": "nauja",
+      "price": "35"
     }
   ],
   "orders": [
