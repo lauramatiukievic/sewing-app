@@ -7,18 +7,18 @@ import { Link, useParams } from "react-router-dom";
 
 import { RingLoader } from "react-spinners";
 import Container from "../../components/container/Container";
+import UserForm from "../../components/userForm/UserForm";
 
 function User() {
   const { id } = useParams();
   const [user, setUser] = useState(null);
-  const [isClothe, setIsClothe] = useState(false);
-  const [isOrder, setIsOrder] = useState(false);
+
+  const [isEdit, setIsEdit] = useState(false);
 
   async function fetchData() {
     const res = await axios.get(`${API_URL}/users/${id}?_embed=clothings&_embed=orders`);
     setUser(res.data);
-    setIsClothe(true);
-    setIsOrder(true);
+
     console.log(res.data);
   }
 
@@ -30,8 +30,14 @@ function User() {
     return <RingLoader color="rgba(214, 142, 54, 1)" />;
   }
 
+  const editUser = () => {
+    fetchData();
+    setIsEdit(false);
+  };
+
   return (
     <Container>
+      {isEdit && <UserForm user={user} onEdit={editUser}></UserForm>}
       <div className="user-info">
         <h2>Vartotojo informacija:</h2>
         <h4 className="user-name">{user.name}</h4>
@@ -45,9 +51,7 @@ function User() {
           </a>
         </div>
       </div>
-      {isClothe ? (
-        <h2>Drabužių sarašas yra tuščias</h2>
-      ) : (
+      {user.clothings ? (
         <div className="clothes-container">
           <h3>Drabužių sąrašas</h3>
 
@@ -60,10 +64,10 @@ function User() {
             ))}
           </ul>
         </div>
-      )}
-      {isOrder ? (
-        <h2>Paslaugų sarašas yra tuščias</h2>
       ) : (
+        <h2>Drabužių sarašas yra tuščias</h2>
+      )}
+      {user.orders ? (
         <div className="orders-container">
           <h3>Užsakymų sąrašas</h3>
 
@@ -76,7 +80,10 @@ function User() {
             ))}
           </ul>
         </div>
+      ) : (
+        <h2>Paslaugų sarašas yra tuščias</h2>
       )}
+      {!isEdit && <button onClick={() => setIsEdit(true)}>Koreguoti vartotoją</button>}
     </Container>
   );
 }
