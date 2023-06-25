@@ -55,6 +55,9 @@ function Orders() {
           <h3>
             Paslauga: <Link to={`/services/${order.service.id}`}> {order.service.title}</Link>
           </h3>
+          <span>
+            <Link to={`/orders/${order.id}`}>UŽsakymo informacija...</Link>
+          </span>
         </div>
       ))}
     </Container>
