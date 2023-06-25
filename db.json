@@ -39,6 +39,16 @@
   ],
   "clothings": [
     {
+      "id": 1,
+      "name": "kelness",
+      "size": "Ls",
+      "gender": "Vyrass",
+      "fabric": "Dzinsass",
+      "color": "Melynas",
+      "photo": "https://www.vilkpedesbustas.lt/uploads/D%C5%BEinsai-vyrams-mados-vyri%C5%A1kos-keln%C4%97s-slim-d%C5%BEinsinio/54505-1.jpeg",
+      "userId": 3
+    },
+    {
       "id": 2,
       "name": "kelness",
       "size": "Ls",
@@ -106,46 +116,11 @@
       "body": "Sijono galai yra nevienodo ilgio"
     },
     {
+      "id": 2,
       "userId": 3,
-      "clothingId": 2,
-      "serviceId": 2,
-      "body": "Dydelių skylių apdirbimas",
-      "id": 2
-    },
-    {
-      "userId": 1,
-      "clothingId": 2,
-      "serviceId": 1,
-      "body": "Dydelių skylių apdirbimas",
-      "id": 3
-    },
-    {
-      "userId": 2,
-      "clothingId": 2,
-      "serviceId": 2,
-      "body": "Dydelių skylių apdirbimas",
-      "id": 4
-    },
-    {
-      "userId": 3,
-      "clothingId": 2,
-      "serviceId": 2,
-      "body": "Dydelių skylių apdirbimas",
-      "id": 5
-    },
-    {
-      "userId": 1,
-      "clothingId": 1,
-      "serviceId": 1,
-      "body": "Dydelių skylių apdirbimas",
-      "id": 6
-    },
-    {
-      "userId": 2,
-      "clothingId": 2,
-      "serviceId": 2,
-      "body": "Dydelių skylių apdirbimas",
-      "id": 7
+      "clothingId": 3,
+      "serviceId": 3,
+      "body": "Dydelių skylių apdir"
     }
   ]
 }
