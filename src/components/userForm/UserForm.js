@@ -22,27 +22,28 @@ function UserForm(props) {
         alert("Klaida kuriant vartotoja");
       });
   };
+
   return (
     <form className="user-form" onSubmit={handleSubmit(onSubmit)}>
       <div className="form-input">
         <label>
           Vardas:
           <input {...register("name", { required: true })} />
-          {errors && errors.name && <p> Užpildyti privaloma!</p>}
+          {errors && errors.name && <span> Užpildyti privaloma!</span>}
         </label>
       </div>
       <div className="form-input">
         <label>
           Elektroninis paštas:
           <input {...register("email", { required: true })} />
-          {errors && errors.email && <p> Užpildyti privaloma!</p>}
+          {errors && errors.email && <span> Užpildyti privaloma!</span>}
         </label>
       </div>
       <div className="form-input">
         <label>
           Telefono numeris:
           <input {...register("phone", { required: true })} />
-          {errors && errors.phone && <p> Užpildyti privaloma!</p>}
+          {errors && errors.phone && <span> Užpildyti privaloma!</span>}
         </label>
       </div>
       <input type="submit" />

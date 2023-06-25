@@ -35,13 +35,53 @@
       "color": "Juodas",
       "userId": 1,
       "photo": "https://m.media-amazon.com/images/I/61ZETrfhTeL._AC_UX679_.jpg"
+    },
+    {
+      "userId": "1",
+      "name": "Kelnes",
+      "size": "L",
+      "gender": "Moteris",
+      "fabric": "Dzinsas",
+      "color": "Melyna",
+      "photo": "https://www.vilkpedesbustas.lt/uploads/D%C5%BEinsai-vyrams-mados-vyri%C5%A1kos-keln%C4%97s-slim-d%C5%BEinsinio/54505-1.jpeg",
+      "id": 2
+    },
+    {
+      "userId": "1",
+      "name": "a",
+      "size": "a",
+      "gender": "a",
+      "fabric": "a",
+      "color": "a",
+      "photo": "https://www.vilkpedesbustas.lt/uploads/D%C5%BEinsai-vyrams-mados-vyri%C5%A1kos-keln%C4%97s-slim-d%C5%BEinsinio/54505-1.jpeg",
+      "id": 3
+    },
+    {
+      "userId": "2",
+      "name": "a",
+      "size": "a",
+      "gender": "a",
+      "fabric": "a",
+      "color": "a",
+      "photo": "https://www.vilkpedesbustas.lt/uploads/D%C5%BEinsai-vyrams-mados-vyri%C5%A1kos-keln%C4%97s-slim-d%C5%BEinsinio/54505-1.jpeg",
+      "id": 4
+    },
+    {
+      "userId": "2",
+      "name": "a",
+      "size": "a",
+      "gender": "a",
+      "fabric": "a",
+      "color": "a",
+      "photo": "https://www.vilkpedesbustas.lt/uploads/D%C5%BEinsai-vyrams-mados-vyri%C5%A1kos-keln%C4%97s-slim-d%C5%BEinsinio/54505-1.jpeg",
+      "id": 5
     }
   ],
   "services": [
     {
       "id": 1,
-      "title": "Kelniu trumpinimas",
-      "body": "Kelniu trumpinimas reikalingo ilgo, kelniu galu tvarkymas, uzsiuvimas",
+      "title": "Sijono trumpinimas",
+      "body": "Sijono trumpinimas reikalingo ilgo, kelniu galu tvarkymas, uzsiuvimas",
       "price": 5
     }
   ],
@@ -51,7 +91,7 @@
       "clothingId": 1,
       "userId": 1,
       "serviceId": 1,
-      "body": "Kelniu galai yra nevienodo ilgio"
+      "body": "Sijono galai yra nevienodo ilgio"
     }
   ]
 }

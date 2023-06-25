@@ -11,9 +11,14 @@ import Container from "../../components/container/Container";
 function User() {
   const { id } = useParams();
   const [user, setUser] = useState(null);
+  const [isClothe, setIsClothe] = useState(false);
+  const [isOrder, setIsOrder] = useState(false);
+
   async function fetchData() {
     const res = await axios.get(`${API_URL}/users/${id}?_embed=clothings&_embed=orders`);
     setUser(res.data);
+    setIsClothe(true);
+    setIsOrder(true);
     console.log(res.data);
   }
 
@@ -40,30 +45,38 @@ function User() {
           </a>
         </div>
       </div>
-      <div className="clothes-container">
-        <h3>Drabužių sąrašas</h3>
+      {isClothe ? (
+        <h2>Drabužių sarašas yra tuščias</h2>
+      ) : (
+        <div className="clothes-container">
+          <h3>Drabužių sąrašas</h3>
 
-        <ul className="clothes-list">
-          {user.clothings.map((clothing) => (
-            <li className="clothing-el" key={clothing.id}>
-              <span> Rūbai: </span>
-              <Link to={`/clothes/${clothing.id}`}>{clothing.name}</Link>
-            </li>
-          ))}
-        </ul>
-      </div>
-      <div className="orders-container">
-        <h3>Užsakymų sąrašas</h3>
+          <ul className="clothes-list">
+            {user.clothings.map((clothing) => (
+              <li className="clothing-el" key={clothing.id}>
+                <span> Rūbai: </span>
+                <Link to={`/clothes/${clothing.id}`}>{clothing.name}</Link>
+              </li>
+            ))}
+          </ul>
+        </div>
+      )}
+      {isOrder ? (
+        <h2>Paslaugų sarašas yra tuščias</h2>
+      ) : (
+        <div className="orders-container">
+          <h3>Užsakymų sąrašas</h3>
 
-        <ul className="orders-list">
-          {user.orders.map((order) => (
-            <li className="orders-el" key={order.id}>
-              <span> Užsakymai: </span>
-              <Link to={`/orders/${order.id}`}>({order.id})</Link>
-            </li>
-          ))}
-        </ul>
-      </div>
+          <ul className="orders-list">
+            {user.orders.map((order) => (
+              <li className="orders-el" key={order.id}>
+                <span> Užsakymai: </span>
+                <Link to={`/orders/${order.id}`}>({order.id})</Link>
+              </li>
+            ))}
+          </ul>
+        </div>
+      )}
     </Container>
   );
 }
