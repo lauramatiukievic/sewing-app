@@ -8,9 +8,10 @@ import { RingLoader } from "react-spinners";
 
 import Container from "../../components/container/Container";
 import { Link } from "react-router-dom";
+import OrderForm from "../../components/orderForm/OrderForm";
 
 function Orders() {
-  const [orders, setOrders] = useState([]);
+  const [orders, setOrders] = useState(null);
 
   async function fetchData() {
     axios.get(`${API_URL}/orders?_expand=user&_expand=service`).then((response) => {
@@ -23,7 +24,7 @@ function Orders() {
         }));
         console.log(ordersWithClothings);
 
-        setOrders(ordersWithClothings);
+        setOrders(ordersWithClothings.toReversed());
       });
     });
   }
@@ -35,18 +36,24 @@ function Orders() {
   if (!orders) {
     return <RingLoader color="rgba(214, 142, 54, 1)" />;
   }
+
+  let createOrder = (order) => {
+    fetchData();
+  };
   return (
     <Container>
+      <OrderForm onCreate={createOrder} />
       {orders.map((order) => (
         <div key={order.id}>
+          <Link to={`/orders/${order.id}`}>Užsakymas(1)</Link>
           <h2>
             Vartotojas: <Link to={`/users/${order.user.id}`}>{order.user.name}</Link>
           </h2>
           <h2>
-            Drabužis:<Link to={`/users/${order.clothing.id}`}> {order.clothing.name}</Link>
+            Drabužis:<Link to={`/clothes/${order.clothing.id}`}> {order.clothing.name}</Link>
           </h2>
           <h3>
-            Paslauga: <Link to={`/users/${order.service.id}`}> {order.service.title}</Link>
+            Paslauga: <Link to={`/services/${order.service.id}`}> {order.service.title}</Link>
           </h3>
           <span>
             <Link to={`/orders/${order.id}`}>UŽsakymo informacija...</Link>

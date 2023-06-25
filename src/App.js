@@ -1,3 +1,4 @@
+
 import { Routes, Route, Link } from "react-router-dom";
 import "./App.css";
 
@@ -11,6 +12,7 @@ import Order from "./components/order/Order";
 import Search from "./pages/search/Search";
 import Navigation from "./components/navigation/Navigation";
 import Services from "./pages/services/Services";
+import Service from "./pages/service/Service";
 
 function App() {
   return (
@@ -20,15 +22,16 @@ function App() {
         <Route path="/home" element={<Home>Pradžia</Home>} />
         <Route path="/users" element={<Users>Vartotojai</Users>} />
         <Route path="/users/:id" element={<User>Vartotojas</User>} />
+        <Route path="/users/:id/orders" element={<Orders>Vieno vartotojo užsakymai</Orders>} />
 
         <Route path="/clothes" element={<Clothes>Drabužiai</Clothes>} />
         <Route path="/clothes/:id" element={<Clothing>Drabužis</Clothing>} />
 
         <Route path="/services" element={<Services>Paslaugos</Services>} />
+        <Route path="/services/:id" element={<Service>Paslaugos</Service>} />
 
         <Route path="/orders" element={<Orders>Užsakymai</Orders>} />
-        <Route path="/order/:id" element={<Orders>Vieno vartpotojo užsakymai</Orders>} />
-        <Route path="/orders/:id" element={<Order>Užsakymai</Order>} />
+        <Route path="/orders/:id" element={<Order>Užsakymas</Order>} />
 
         <Route path="/search" element={<Search>Paieška</Search>} />
 

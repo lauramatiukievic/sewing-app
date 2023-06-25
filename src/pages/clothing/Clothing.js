@@ -7,10 +7,12 @@ import { useParams } from "react-router-dom";
 import { RingLoader } from "react-spinners";
 
 import Container from "../../components/container/Container";
+import ClothingForm from "../../components/clothingForm/ClothingForm";
 
 function Clothing() {
   const { id } = useParams();
-  const [clothing, setClothing] = useState([]);
+  const [clothing, setClothing] = useState(null);
+  const [isEdit, setIsEdit] = useState(false);
 
   async function fetchData() {
     const res = await axios.get(`${API_URL}/clothings/${id}?_expand=user`);
@@ -26,11 +28,17 @@ function Clothing() {
     return <RingLoader color="rgba(214, 142, 54, 1)" />;
   }
 
+  const editClothing = () => {
+    fetchData();
+    setIsEdit(false);
+  };
+
   return (
     <Container>
+      {isEdit && <ClothingForm clothing={clothing} onEdit={editClothing} />}
       <div className="clothing-info">
         <h2>Drabužio informacija:</h2>
-        {/* <h4>Vartotojo vardas: {clothing.user.name}</h4> */}
+        <h4>Vartotojo vardas: {clothing.user.name}</h4>
         <h4>Registruojamas drabužis: {clothing.name}</h4>
         <div className="clothing-data">
           <h3>Drabužio charakteristika:</h3>
@@ -44,6 +52,7 @@ function Clothing() {
           <img width="150" height="150" src={clothing.photo} alt="" />
         </div>
       </div>
+      {!isEdit && <button onClick={() => setIsEdit(true)}> Koreguoti drabužį </button>}
     </Container>
   );
 }
