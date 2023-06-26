@@ -41,6 +41,18 @@
       "phone": "5746764864",
       "email": "ermelinda990@gmail.com",
       "id": 7
+    },
+    {
+      "name": "Arnas",
+      "phone": "7668388333",
+      "email": "arnasmur9@gmail.com",
+      "id": 8
+    },
+    {
+      "name": "Martynas",
+      "phone": "432353555",
+      "email": "martynas@gmail.com",
+      "id": 9
     }
   ],
   "clothings": [
@@ -73,6 +85,26 @@
       "fabric": "Dzinsas",
       "color": "Melyna",
       "photo": "https://www.vilkpedesbustas.lt/uploads/D%C5%BEinsai-vyrams-mados-vyri%C5%A1kos-keln%C4%97s-slim-d%C5%BEinsinio/54505-1.jpeg"
+    },
+    {
+      "userId": 8,
+      "id": 4,
+      "name": "Marskiniai",
+      "size": "152",
+      "gender": "Vaikas",
+      "fabric": "Medvilne",
+      "color": "Juoda",
+      "photo": "https://batukaivaikams.lt/8422-large_default/juodi-marskiniai-ilgomis-rankovemis-tf1314242-116-152.jpg"
+    },
+    {
+      "userId": 9,
+      "id": 5,
+      "name": "Kedai",
+      "size": "54",
+      "gender": "Vaikas",
+      "fabric": "Polisteris",
+      "color": "Melyna",
+      "photo": "https://www.deveti-rubai.lt/wp-content/uploads/2019/02/tamsiai-melyni-kedai-UMBRO-39dydis-7e.png"
     }
   ],
   "services": [
@@ -87,6 +119,20 @@
       "title": "Sijono siaurinimas",
       "body": "Pagal išmatavimus, susiųti tinkamo dydžio gaminį",
       "price": "6"
+    },
+    {
+      "title": "Sagų siuvimas",
+      "body": "Sagu parinikimas, sagu pritaikymas, sagu siuvimas",
+      "email": "",
+      "price": "3",
+      "id": 3
+    },
+    {
+      "title": "Batu tvarkymas",
+      "body": "Pado priklijavimas",
+      "email": "",
+      "price": "5",
+      "id": 4
     }
   ],
   "orders": [
@@ -103,6 +149,20 @@
       "clothingId": 1,
       "serviceId": 2,
       "body": "Sagu parinikimas, sagu pritaikymas, sagu siuvimas"
+    },
+    {
+      "id": 4,
+      "userId": 8,
+      "clothingId": 4,
+      "serviceId": 3,
+      "body": "Sagu parinikimas, sagu pritaikymas, sagu siuvimas"
+    },
+    {
+      "id": 5,
+      "userId": 9,
+      "clothingId": 5,
+      "serviceId": 4,
+      "body": "Priklijuoti kairiojo bato prieki"
     }
   ]
 }
