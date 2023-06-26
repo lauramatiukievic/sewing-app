@@ -105,6 +105,26 @@
       "fabric": "Polisteris",
       "color": "Melyna",
       "photo": "https://www.deveti-rubai.lt/wp-content/uploads/2019/02/tamsiai-melyni-kedai-UMBRO-39dydis-7e.png"
+    },
+    {
+      "userId": 8,
+      "id": 6,
+      "name": "asd",
+      "size": "sad",
+      "gender": "asd",
+      "fabric": "sadas",
+      "color": "dsad",
+      "photo": "asd"
+    },
+    {
+      "userId": 2,
+      "id": 7,
+      "name": "asd",
+      "size": "sadsa",
+      "gender": "dsa",
+      "fabric": "d",
+      "color": "sdasd",
+      "photo": "asd"
     }
   ],
   "services": [
