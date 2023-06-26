@@ -59,7 +59,6 @@ function Orders() {
                 <h3>
                   Drabužis:
                   <Link className="clothes-link" to={`/clothes/${order.clothing.id}`}>
-                    {" "}
                     {order.clothing.name}
                   </Link>
                 </h3>
