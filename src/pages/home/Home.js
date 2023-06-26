@@ -6,7 +6,7 @@ import Container from "../../components/container/Container";
 
 function Home() {
   return (
-    <div className="home-page">
+    <div className="home-page  ">
       <Container className="home-container">
         <div className="registration">
           <p>Registruokis, pridėk drabužį ir pasirink reikiama paslauga</p>

@@ -1,12 +1,13 @@
 import React from "react";
+import hamburger from "../../photo/4572821-200.png";
 import "./Navigation.scss";
 
 import { NavLink } from "react-router-dom";
 
 function Navigation() {
   return (
-    <nav className="page-header">
-      <NavLink className="header-title" to="/home">
+    <nav className="page-header .col-md-">
+      <NavLink className="header-title .col-md- h3" to="/home">
         Drabužių taisymas
       </NavLink>
       <ul className="link-list">
@@ -41,6 +42,9 @@ function Navigation() {
           </NavLink>
         </li>
       </ul>
+      <button className="menu-button-header">
+        <img alt="" className="hamburger" src={hamburger} />
+      </button>
     </nav>
   );
 }

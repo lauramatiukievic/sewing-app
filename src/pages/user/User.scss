@@ -24,11 +24,23 @@
 }
 
 
-.clothing-link {
+.clothing-link,
+.order-link {
     text-decoration: none;
     color: black;
 }
 
-.clothing-link:hover {
+.clothing-link:hover,
+.order-link:hover {
     font-weight: 700;
+}
+
+
+@media screen and (max-width: 500px) {
+
+    .user-page {
+        display: flex;
+        flex-direction: column;
+        width: 90%;
+    }
 }

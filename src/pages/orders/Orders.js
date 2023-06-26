@@ -43,37 +43,42 @@ function Orders() {
   };
   return (
     <Container>
-      <OrderForm onCreate={createOrder} />
-      <div className="orders-content">
-        {orders.map((order) => (
-          <div className="orders-info" key={order.id}>
-            <h2>
-              Vartotojas:{" "}
-              <Link className="users-link" to={`/users/${order.user.id}`}>
-                {order.user.name}
-              </Link>
-            </h2>
-            <h3>
-              Drabužis:
-              <Link className="clothes-link" to={`/clothes/${order.clothing.id}`}>
-                {" "}
-                {order.clothing.name}
-              </Link>
-            </h3>
-            <h3>
-              Paslauga:{" "}
-              <Link className="services-link" to={`/services/${order.service.id}`}>
-                {" "}
-                {order.service.title}
-              </Link>
-            </h3>
-            <span>
-              <Link className="orders-link" to={`/orders/${order.id}`}>
-                UŽsakymo informacija...
-              </Link>
-            </span>
+      <div className="orders-page">
+        <OrderForm onCreate={createOrder} />
+        <div className="about-orders">
+          <h1>Užsakymai:</h1>
+          <div className="orders-content">
+            {orders.map((order) => (
+              <div className="orders-info" key={order.id}>
+                <h2>
+                  Vartotojas:{" "}
+                  <Link className="users-link" to={`/users/${order.user.id}`}>
+                    {order.user.name}
+                  </Link>
+                </h2>
+                <h3>
+                  Drabužis:
+                  <Link className="clothes-link" to={`/clothes/${order.clothing.id}`}>
+                    {" "}
+                    {order.clothing.name}
+                  </Link>
+                </h3>
+                <h3>
+                  Paslauga:{" "}
+                  <Link className="services-link" to={`/services/${order.service.id}`}>
+                    {" "}
+                    {order.service.title}
+                  </Link>
+                </h3>
+                <span>
+                  <Link className="orders-link" to={`/orders/${order.id}`}>
+                    Užsakymo informacija...
+                  </Link>
+                </span>
+              </div>
+            ))}
           </div>
-        ))}
+        </div>
       </div>
     </Container>
   );

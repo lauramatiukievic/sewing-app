@@ -79,7 +79,7 @@ function Order() {
             </h2>
             <h2>
               Drabužis:
-              <Link className="clothes-link" to={`/clothes/${order.clothing.id}`}>
+              <Link className="clothes-link" to={`/clothes/${order.clothing[0].id}`}>
                 {" "}
                 {order.clothing[0].name}
               </Link>
