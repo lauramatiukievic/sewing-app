@@ -1,5 +1,6 @@
 import React from "react";
 import axios from "axios";
+import "./Services.scss";
 
 import { API_URL } from "../../config";
 import { useEffect, useState } from "react";
@@ -32,15 +33,20 @@ function Services() {
   return (
     <Container>
       <ServiceForm onCreate={createService} />
-      {services.map((service) => (
-        <div className="service-info" key={service.id}>
-          {" "}
-          <h2>Paslaugos pavadinimas: </h2>
-          <Link to={`/services/${service.id}`}>{service.title}</Link>
-          <p>Paslaugos aprašymas:{service.body}</p>
-          <p>Paslaugos kaina: {service.price} e.</p>
-        </div>
-      ))}
+      <div className="services-content">
+        {services.map((service) => (
+          <div className="services-info" key={service.id}>
+            {" "}
+            <h2>Paslaugos pavadinimas: </h2>
+            <Link className="services-link" to={`/services/${service.id}`}>
+              {" "}
+              {service.title}
+            </Link>
+            <p>Paslaugos aprašymas: {service.body}</p>
+            <p>Paslaugos kaina: {service.price} e.</p>
+          </div>
+        ))}
+      </div>
     </Container>
   );
 }

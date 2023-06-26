@@ -61,7 +61,7 @@ function ClothingForm({ clothing, onCreate, onEdit }) {
     </option>
   ));
   return (
-    <form className="user-form" onSubmit={handleSubmit(onSubmit)}>
+    <form className="form-data" onSubmit={handleSubmit(onSubmit)}>
       <div className="form-select">
         {" "}
         <select name="userId" {...register("userId", { required: true, setValueAs: (value) => Number(value) })}>
@@ -74,49 +74,37 @@ function ClothingForm({ clothing, onCreate, onEdit }) {
       </div>
 
       <div className="form-input">
-        <label>
-          Vardas:
-          <input {...register("name", { required: true })} />
-          {errors && errors.name && <span> Užpildyti privaloma!</span>}
-        </label>
+        <label>Drabužis: </label>
+        <input {...register("name", { required: true })} />
+        {errors && errors.name && <span> Užpildyti privaloma!</span>}
       </div>
       <div className="form-input">
-        <label>
-          Dydis:
-          <input {...register("size", { required: true })} />
-          {errors && errors.size && <span> Užpildyti privaloma!</span>}
-        </label>
+        <label>Dydis: </label>
+        <input {...register("size", { required: true })} />
+        {errors && errors.size && <span> Užpildyti privaloma!</span>}
       </div>
       <div className="form-input">
-        <label>
-          Nešiotojas:
-          <input {...register("gender", { required: true })} />
-          {errors && errors.gender && <span> Užpildyti privaloma!</span>}
-        </label>
+        <label>Nešiotojas: </label>
+        <input {...register("gender", { required: true })} />
+        {errors && errors.gender && <span> Užpildyti privaloma!</span>}
       </div>
       <div className="form-input">
-        <label>
-          Audinys:
-          <input {...register("fabric", { required: true })} />
-          {errors && errors.fabric && <span> Užpildyti privaloma!</span>}
-        </label>
+        <label>Audinys: </label>
+        <input {...register("fabric", { required: true })} />
+        {errors && errors.fabric && <span> Užpildyti privaloma!</span>}
       </div>
       <div className="form-input">
-        <label>
-          Spalva:
-          <input {...register("color", { required: true })} />
-          {errors && errors.color && <span> Užpildyti privaloma!</span>}
-        </label>
+        <label>Spalva: </label>
+        <input {...register("color", { required: true })} />
+        {errors && errors.color && <span> Užpildyti privaloma!</span>}
       </div>
       <div className="form-input">
-        <label>
-          Nuotrauka:
-          <input {...register("photo", { required: true })} />
-          {errors && errors.photo && <span> Užpildyti privaloma!</span>}
-        </label>
+        <label>Nuotrauka: </label>
+        <input {...register("photo", { required: true })} />
+        {errors && errors.photo && <span> Užpildyti privaloma!</span>}
       </div>
 
-      {clothing ? <input type="submit" value="Išsaugoti drabužį" /> : <input type="submit" value="Sukurti drabužį" />}
+      {clothing ? <input className="submit-input" type="submit" value="Išsaugoti drabužį" /> : <input className="submit-input" type="submit" value="Sukurti drabužį" />}
     </form>
   );
 }

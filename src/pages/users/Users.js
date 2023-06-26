@@ -1,5 +1,6 @@
 import React from "react";
 import axios from "axios";
+import "./Users.scss";
 
 import { API_URL } from "../../config";
 import { useEffect, useState } from "react";
@@ -27,22 +28,26 @@ function Users() {
   }
 
   let createUser = (user) => {
-    setUsers((users) => [...users, user]);
+    setUsers((users) => [user, ...users]);
   };
 
   return (
     <Container>
-      <UserForm onCreate={createUser}></UserForm>
-      <div className="users-container">
-        <ul>
-          {users.map((user) => (
-            <li className="user-name" key={user.id}>
-              <Link to={`/users/${user.id}`} className="users-link">
-                {user.name}(Užsakymų skaičius {})
-              </Link>
-            </li>
-          ))}
-        </ul>
+      <div className="users-page">
+        <UserForm onCreate={createUser}></UserForm>
+        <div className="users-container">
+          <h3>Vartotojų saršas</h3>
+          <ul className="users-list">
+            {users.map((user) => (
+              <li className="users-name" key={user.id}>
+                <Link className="users-link" to={`/users/${user.id}`}>
+                  {user.name}
+                </Link>
+                <span className="orders">(Užsakymų skaičius {user.orders ? user.orders.length : 0})</span>
+              </li>
+            ))}
+          </ul>
+        </div>
       </div>
     </Container>
   );

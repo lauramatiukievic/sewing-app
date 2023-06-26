@@ -51,21 +51,25 @@ function Service() {
       {serviceDeleted ? (
         <>
           <h1>Paslauga ištrintas</h1>
-          <Link to={"/services"}>Grįžti į paslaugų sąrašą</Link>
+          <Link className="delete-title" to={"/services"}>
+            Grįžti į paslaugų sąrašą
+          </Link>
         </>
       ) : (
         <>
-          <button className="delete-data" onClick={serviceDeleteHandler}>
-            Ištrinti paslaugą
-          </button>
-          {isEdit && <ServiceForm service={service} onEdit={editService} />}
-          <div className="service-info" key={service.id}>
-            <h2>Paslaugos pavadinimas: {service.title}</h2>
-            <p>Paslaugos aprašymas:{service.body}</p>
-            <p>Paslaugos kaina: {service.price} e.</p>
-          </div>
+          <div className="about">
+            {isEdit && <ServiceForm service={service} onEdit={editService} />}
+            <div className="service-info" key={service.id}>
+              <h2>Paslaugos pavadinimas: {service.title}</h2>
+              <p>Paslaugos aprašymas:{service.body}</p>
+              <p>Paslaugos kaina: {service.price} e.</p>
+            </div>
 
-          {!isEdit && <button onClick={() => setIsEdit(true)}>Koreguoti paslaugą</button>}
+            {!isEdit && <button onClick={() => setIsEdit(true)}>Koreguoti paslaugą</button>}
+            <button className="delete-data" onClick={serviceDeleteHandler}>
+              Ištrinti paslaugą
+            </button>
+          </div>
         </>
       )}
     </Container>

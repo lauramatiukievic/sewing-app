@@ -1,5 +1,6 @@
 import React from "react";
 import axios from "axios";
+import "./Clothes.scss";
 
 import { API_URL } from "../../config";
 import { useEffect, useState } from "react";
@@ -30,21 +31,27 @@ function Clothes() {
   return (
     <Container>
       <ClothingForm onCreate={createClothing} />
-      <div>
+      <div className="about-clothes">
         <h2>Drabužiai</h2>
-
-        {clothes.map((clothing) => (
-          <div key={clothing.id}>
-            <div>
-              <span>Vartotojas:</span>
-              <Link to={`/users/${clothing.user.id}`}> {clothing.user.name}</Link>
+        <div className="clothes-container">
+          {clothes.map((clothing) => (
+            <div className="clothes-info" key={clothing.id}>
+              <div className="user-name">
+                <span>Vartotojas:</span>
+                <Link className="users-link" to={`/users/${clothing.user.id}`}>
+                  {" "}
+                  {clothing.user.name}
+                </Link>
+              </div>
+              <div className="clothing-name">
+                <span>Drabužis: </span>
+                <Link className="clothes-link" to={`/clothes/${clothing.id}`}>
+                  {clothing.name}
+                </Link>
+              </div>
             </div>
-            <div>
-              <span>Drabužis: </span>
-              <Link to={`/clothes/${clothing.id}`}>{clothing.name}</Link>
-            </div>
-          </div>
-        ))}
+          ))}
+        </div>
       </div>
     </Container>
   );

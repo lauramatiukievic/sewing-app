@@ -1,0 +1,89 @@
+Link {
+  text-decoration: none;
+}
+
+.about {
+  border: 2px solid burlywood;
+  padding: 20px;
+  width: fit-content;
+  box-shadow: 5px 3px 3px burlywood;
+  margin-top: 20px;
+}
+
+
+.form-data {
+
+  display: flex;
+  flex-wrap: nowrap;
+  flex-direction: column;
+  gap: 5px;
+  margin-top: 20px;
+  height: fit-content;
+}
+
+.form-input {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: baseline;
+
+}
+
+select {
+  width: 170px;
+  border: 1px solid burlywood;
+  padding: 5px;
+}
+
+.submit-input,
+button {
+  margin-top: 10px;
+  border: 2px solid burlywood;
+  padding: 6px 10px;
+  border-radius: 20px;
+  background-color: white;
+  text-transform: uppercase;
+  margin-right: 5px;
+}
+
+input,
+
+{
+width: fit-content;
+border: 1px solid burlywood;
+padding: 5px;
+}
+
+.container {
+  .form-data {
+    border: 4px solid burlywood;
+    width: fit-content;
+    padding: 20px
+  }
+}
+
+.about {
+  .form-data {
+    border: transparent;
+    padding: 0;
+    margin: 0;
+  }
+}
+
+.users-link,
+.clothes-link,
+.delete-title,
+.services-link,
+.orders-link {
+
+  text-decoration: none;
+  color: black;
+}
+
+.users-link:hover,
+.clothes-link:hover,
+.delete-title:hover,
+.services-link:hover,
+.orders-link:hover {
+  font-weight: 700;
+}
