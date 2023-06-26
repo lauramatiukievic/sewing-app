@@ -2,13 +2,42 @@
     .clothing-data {
         display: flex;
     }
-
 }
 
 .about {
     .clothing-info {
         display: flex;
-        gap: 50px;
+        gap: 10%;
     }
 
+}
+
+
+@media screen and (max-width: 880px) {
+
+    .about {
+        width: 80%;
+    }
+
+    .about {
+        .clothing-info {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            grid-template-rows: 1fr 1fr;
+            padding-bottom: 20px;
+        }
+    }
+}
+
+@media screen and (max-width: 520px) {
+
+
+    .about {
+        .clothing-info {
+            display: flex;
+            flex-wrap: wrap;
+            flex-direction: column;
+            width: 90%;
+        }
+    }
 }

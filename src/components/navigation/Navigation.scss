@@ -5,6 +5,7 @@
   align-items: baseline;
   gap: 30px;
 }
+
 .page-header {
   display: flex;
 
@@ -22,6 +23,7 @@
   padding-left: 20px;
   text-shadow: 2px 2px burlywood;
 }
+
 .nav-list {
   list-style-type: none;
   padding-left: 0;
@@ -29,12 +31,40 @@
   flex-wrap: wrap;
   gap: 5px 25px;
 }
+
 .nav-link {
   color: black;
   text-decoration: none;
   text-transform: uppercase;
 }
+
 .nav-link.active {
   color: black;
   font-weight: 700;
+}
+
+.hamburger {
+  width: 50px;
+}
+
+.menu-button-header {
+  display: none;
+}
+
+@media screen and (max-width: 950px) {
+
+  .page-header {
+    display: flex;
+    align-items: center;
+  }
+
+  .menu-button-header {
+    display: inline-flex;
+    background-color: white;
+    border: none;
+  }
+
+  .nav-list {
+    display: none;
+  }
 }

@@ -1,12 +1,14 @@
 .clothes-container {
     display: flex;
-    gap: 10px;
-    padding-left: 0;
+    flex-wrap: wrap;
+    gap: 3%;
+    padding: 0;
+    justify-content: center;
 }
 
 .clothes-info {
     display: flex;
-    align-items: center;
+    width: 20%;
     flex-direction: column;
     border: 2px solid black;
     padding: 10px;
@@ -14,4 +16,37 @@
     border-radius: 5px;
     border-color: burlywood;
     box-shadow: 5px 3px 3px burlywood;
+    margin-bottom: 2%;
+}
+
+.about-clothes {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.clothes-page {
+    display: flex;
+    gap: 2%
+}
+
+@media screen and (max-width: 800px) {
+
+    .clothes-info {
+        width: 30%;
+    }
+}
+
+@media screen and (max-width: 520px) {
+
+    .clothes-page {
+        display: flex;
+
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .clothes-info {
+        width: 50%;
+    }
 }

@@ -32,20 +32,25 @@ function Services() {
 
   return (
     <Container>
-      <ServiceForm onCreate={createService} />
-      <div className="services-content">
-        {services.map((service) => (
-          <div className="services-info" key={service.id}>
-            {" "}
-            <h2>Paslaugos pavadinimas: </h2>
-            <Link className="services-link" to={`/services/${service.id}`}>
-              {" "}
-              {service.title}
-            </Link>
-            <p>Paslaugos aprašymas: {service.body}</p>
-            <p>Paslaugos kaina: {service.price} e.</p>
+      <div className="services-page">
+        <ServiceForm onCreate={createService} />
+        <div className="services-content">
+          <h1>Paslaugos:</h1>
+          <div className="services-container">
+            {services.map((service) => (
+              <div className="services-info" key={service.id}>
+                {" "}
+                <h2>Paslaugos pavadinimas: </h2>
+                <Link className="services-link" to={`/services/${service.id}`}>
+                  {" "}
+                  {service.title}
+                </Link>
+                <p>Paslaugos aprašymas: {service.body}</p>
+                <p>Paslaugos kaina: {service.price} e.</p>
+              </div>
+            ))}
           </div>
-        ))}
+        </div>
       </div>
     </Container>
   );

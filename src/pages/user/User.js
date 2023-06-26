@@ -52,7 +52,7 @@ function User() {
 
   return (
     <Container>
-      <div className="users-page">
+      <div className="user-page">
         {userDeleted ? (
           <>
             <h1>Vartotojas ištrintas</h1>
@@ -77,8 +77,8 @@ function User() {
                 </a>
               </div>
             </div>
-            {user.clothings ? (
-              <div className="clothes-container">
+            {user.clothings && user.clothings.length !== 0 ? (
+              <div className="clothe-container">
                 <h3>Drabužių sąrašas</h3>
 
                 <ul className="clothes-list">
@@ -94,7 +94,7 @@ function User() {
             ) : (
               <h2>Drabužių sarašas yra tuščias</h2>
             )}
-            {user.orders ? (
+            {user.orders && user.clothings.length !== 0 ? (
               <div className="orders-container">
                 <h3>Užsakytos paslaugos:</h3>
 
