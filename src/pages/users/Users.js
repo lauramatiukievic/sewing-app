@@ -32,19 +32,22 @@ function Users() {
   };
 
   return (
-    <Container className="users-body">
-      <UserForm onCreate={createUser}></UserForm>
-      <div className="users-container">
-        <ul className="users-list">
-          {users.map((user) => (
-            <li className="users-name" key={user.id}>
-              <Link className="users-link" to={`/users/${user.id}`}>
-                {user.name}
-              </Link>
-              <span className="orders">(Užsakymų skaičius {user.orders ? user.orders.length : 0})</span>
-            </li>
-          ))}
-        </ul>
+    <Container>
+      <div className="users-page">
+        <UserForm onCreate={createUser}></UserForm>
+        <div className="users-container">
+          <h3>Vartotojų saršas</h3>
+          <ul className="users-list">
+            {users.map((user) => (
+              <li className="users-name" key={user.id}>
+                <Link className="users-link" to={`/users/${user.id}`}>
+                  {user.name}
+                </Link>
+                <span className="orders">(Užsakymų skaičius {user.orders ? user.orders.length : 0})</span>
+              </li>
+            ))}
+          </ul>
+        </div>
       </div>
     </Container>
   );
