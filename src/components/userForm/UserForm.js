@@ -48,30 +48,24 @@ function UserForm({ onCreate, user, onEdit }) {
   };
 
   return (
-    <form className="user-form" onSubmit={handleSubmit(onSubmit)}>
+    <form className="form-data" onSubmit={handleSubmit(onSubmit)}>
       <div className="form-input">
-        <label>
-          Vardas:
-          <input {...register("name", { required: true })} />
-          {errors && errors.name && <span> Užpildyti privaloma!</span>}
-        </label>
+        <label>Vardas: </label>
+        <input {...register("name", { required: true })} />
+        {errors && errors.name && <span> Užpildyti privaloma!</span>}
       </div>
       <div className="form-input">
-        <label>
-          Elektroninis paštas:
-          <input {...register("email", { required: true })} />
-          {errors && errors.email && <span> Užpildyti privaloma!</span>}
-        </label>
+        <label>Elektroninis paštas: </label>
+        <input {...register("email", { required: true })} />
+        {errors && errors.email && <span> Užpildyti privaloma!</span>}
       </div>
       <div className="form-input">
-        <label>
-          Telefono numeris:
-          <input {...register("phone", { required: true })} />
-          {errors && errors.phone && <span> Užpildyti privaloma!</span>}
-        </label>
+        <label>Telefono numeris: </label>
+        <input {...register("phone", { required: true })} />
+        {errors && errors.phone && <span> Užpildyti privaloma!</span>}
       </div>
 
-      {user ? <input type="submit" value="Išsaugoti vartotoją" /> : <input type="submit" value="Sukurti vartotoją" />}
+      {user ? <input className="submit-input" type="submit" value="Išsaugoti vartotoją" /> : <input className="submit-input" type="submit" value="Sukurti vartotoją" />}
     </form>
   );
 }

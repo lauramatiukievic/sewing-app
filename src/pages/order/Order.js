@@ -8,7 +8,7 @@ import { RingLoader } from "react-spinners";
 import { Link } from "react-router-dom";
 
 import Container from "../../components/container/Container";
-import OrderForm from "../orderForm/OrderForm";
+import OrderForm from "../../components/orderForm/OrderForm";
 
 function Order() {
   const { id } = useParams();
@@ -62,29 +62,43 @@ function Order() {
       {orderDeleted ? (
         <>
           <h1>Užsakymas ištrintas</h1>
-          <Link to={"/orders"}>Grįžti į užsakymų sąrašą</Link>
+          <Link className="delete-title" to={"/orders"}>
+            Grįžti į užsakymų sąrašą
+          </Link>
         </>
       ) : (
-        <>
+        <div className="about">
           {isEdit && <OrderForm order={order} onEdit={editOrder} />}
-          <button className="delete-data" onClick={orderDeleteHandler}>
-            Ištrinti užsakymą
-          </button>
+
           <div className="order-info">
             <h2>
-              Vartotojas: <Link to={`/users/${order.user.id}`}>{order.user.name}</Link>
+              Vartotojas:{" "}
+              <Link className="users-link" to={`/users/${order.user.id}`}>
+                {order.user.name}
+              </Link>
             </h2>
             <h2>
-              Drabužis:<Link to={`/clothes/${order.clothing.id}`}> {order.clothing[0].name}</Link>
+              Drabužis:
+              <Link className="clothes-link" to={`/clothes/${order.clothing.id}`}>
+                {" "}
+                {order.clothing[0].name}
+              </Link>
             </h2>
             <h3>
-              Paslauga: <Link to={`/services/${order.service.id}`}> {order.service.title}</Link>
+              Paslauga:{" "}
+              <Link className="services-link" to={`/services/${order.service.id}`}>
+                {" "}
+                {order.service.title}
+              </Link>
             </h3>
             <p>Užsakymo aprašymas: {order.body}</p>
 
             {!isEdit && <button onClick={() => setIsEdit(true)}>Koreguoti užsakymą</button>}
+            <button className="delete-data" onClick={orderDeleteHandler}>
+              Ištrinti užsakymą
+            </button>
           </div>
-        </>
+        </div>
       )}
     </Container>
   );

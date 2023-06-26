@@ -1,5 +1,6 @@
 import React from "react";
 import axios from "axios";
+import "./Orders.scss";
 
 import { API_URL } from "../../config";
 import { useEffect, useState } from "react";
@@ -43,22 +44,37 @@ function Orders() {
   return (
     <Container>
       <OrderForm onCreate={createOrder} />
-      {orders.map((order) => (
-        <div key={order.id}>
-          <h2>
-            Vartotojas: <Link to={`/users/${order.user.id}`}>{order.user.name}</Link>
-          </h2>
-          <h2>
-            Drabužis:<Link to={`/clothes/${order.clothing.id}`}> {order.clothing.name}</Link>
-          </h2>
-          <h3>
-            Paslauga: <Link to={`/services/${order.service.id}`}> {order.service.title}</Link>
-          </h3>
-          <span>
-            <Link to={`/orders/${order.id}`}>UŽsakymo informacija...</Link>
-          </span>
-        </div>
-      ))}
+      <div className="orders-content">
+        {orders.map((order) => (
+          <div className="orders-info" key={order.id}>
+            <h2>
+              Vartotojas:{" "}
+              <Link className="users-link" to={`/users/${order.user.id}`}>
+                {order.user.name}
+              </Link>
+            </h2>
+            <h3>
+              Drabužis:
+              <Link className="clothes-link" to={`/clothes/${order.clothing.id}`}>
+                {" "}
+                {order.clothing.name}
+              </Link>
+            </h3>
+            <h3>
+              Paslauga:{" "}
+              <Link className="services-link" to={`/services/${order.service.id}`}>
+                {" "}
+                {order.service.title}
+              </Link>
+            </h3>
+            <span>
+              <Link className="orders-link" to={`/orders/${order.id}`}>
+                UŽsakymo informacija...
+              </Link>
+            </span>
+          </div>
+        ))}
+      </div>
     </Container>
   );
 }

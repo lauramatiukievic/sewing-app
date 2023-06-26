@@ -81,7 +81,7 @@ function OrderForm({ order, onCreate, onEdit }) {
     </option>
   ));
   return (
-    <form className="user-form" onSubmit={handleSubmit(onSubmit)}>
+    <form className="form-data" onSubmit={handleSubmit(onSubmit)}>
       <div className="form-select">
         {" "}
         <select type="number" name="userId" {...register("userId", { required: true, setValueAs: (value) => Number(value) })}>
@@ -114,13 +114,11 @@ function OrderForm({ order, onCreate, onEdit }) {
         {errors && errors.serviceId && <span> Užpildyti privaloma!</span>}
       </div>
       <div className="form-input">
-        <label>
-          Užsakymo aprašymas:
-          <input {...register("body", { required: true })} />
-          {errors && errors.body && <span> Užpildyti privaloma!</span>}
-        </label>
+        <label>Užsakymo aprašymas: </label>
+        <input {...register("body", { required: true })} />
+        {errors && errors.body && <span> Užpildyti privaloma!</span>}
       </div>
-      {order ? <input type="submit" value="Išsaugoti užsakymą" /> : <input type="submit" value="Sukurti užsakymą" />}
+      {order ? <input className="submit-input" type="submit" value="Išsaugoti užsakymą" /> : <input className="submit-input" type="submit" value="Sukurti užsakymą" />}
     </form>
   );
 }

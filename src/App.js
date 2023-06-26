@@ -1,6 +1,5 @@
-
 import { Routes, Route, Link } from "react-router-dom";
-import "./App.css";
+import "./App.scss";
 
 import Home from "./pages/home/Home";
 import Users from "./pages/users/Users";
@@ -8,7 +7,7 @@ import User from "./pages/user/User";
 import Clothes from "./pages/clothes/Clothes";
 import Clothing from "./pages/clothing/Clothing";
 import Orders from "./pages/orders/Orders";
-import Order from "./components/order/Order";
+import Order from "./pages/order/Order";
 import Search from "./pages/search/Search";
 import Navigation from "./components/navigation/Navigation";
 import Services from "./pages/services/Services";

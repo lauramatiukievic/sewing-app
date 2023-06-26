@@ -1,0 +1,34 @@
+.about-user {
+    h4 {
+        margin-bottom: 3px;
+    }
+}
+
+.contact-info {
+    display: flex;
+    flex-direction: column;
+}
+
+
+
+.contact-info {
+    h4 {
+        margin-bottom: 5px;
+    }
+
+    a {
+        text-decoration: none;
+        color: black;
+        font-style: initial;
+    }
+}
+
+
+.clothing-link {
+    text-decoration: none;
+    color: black;
+}
+
+.clothing-link:hover {
+    font-weight: 700;
+}

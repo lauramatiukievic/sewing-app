@@ -1,0 +1,25 @@
+.home-page {
+    background-image: url("../../photo/pexels-photo-461035.jpeg");
+    background-position: center;
+    background-repeat: repeat;
+    height: 400px;
+    position: relative;
+
+
+}
+
+.registration {
+    color: black;
+    position: absolute;
+    top: 100%;
+    display: flex;
+    flex-direction: column;
+
+    font-size: 20px;
+
+}
+
+.registration-title {
+
+    font-size: 30px;
+}

@@ -1,5 +1,6 @@
 import React from "react";
 import axios from "axios";
+import "./User.scss";
 
 import { API_URL } from "../../config";
 import { useEffect, useState } from "react";
@@ -16,10 +17,12 @@ function User() {
   const [isEdit, setIsEdit] = useState(false);
   const [userDeleted, setUserDeleted] = useState(false);
   async function fetchData() {
-    const res = await axios.get(`${API_URL}/users/${id}?_embed=clothings&_embed=orders`);
-    setUser(res.data);
+    const res = await axios.get(`${API_URL}/users/${id}?_embed=clothings`);
+    const orders = await axios.get(`${API_URL}/orders?_expand=user&userId=${id}&_expand=service`);
 
-    console.log(res.data);
+    const userWithOrders = { ...res.data, orders: orders.data };
+
+    setUser(userWithOrders);
   }
 
   useEffect(() => {
@@ -52,24 +55,24 @@ function User() {
       {userDeleted ? (
         <>
           <h1>Vartotojas ištrintas</h1>
-          <Link to={"/users"}>Grįžti į vartotojų sąrašą</Link>
+          <Link className="delete-title" to={"/users"}>
+            Grįžti į vartotojų sąrašą
+          </Link>
         </>
       ) : (
-        <>
+        <div className="about">
           {isEdit && <UserForm user={user} onEdit={editUser}></UserForm>}
-          <button className="delete-data" onClick={userDeleteHandler}>
-            Ištrinti vartotoją
-          </button>
-          <div className="user-info">
+
+          <div className="about-user">
             <h2>Vartotojo informacija:</h2>
-            <h4 className="user-name">{user.name}</h4>
+            <h4 className="user-name"> Vardas: {user.name}</h4>
             <div className="contact-info">
               <h4>Kontaktai:</h4>
               <a className="email" href={"mailto:" + user.email}>
-                Elektroninis paštas {user.email}
+                Elektroninis paštas: {user.email}
               </a>
               <a className="phone" href={"tel:" + user.phone}>
-                Telefono numeris {user.phone}
+                Telefono numeris: {user.phone}
               </a>
             </div>
           </div>
@@ -80,8 +83,9 @@ function User() {
               <ul className="clothes-list">
                 {user.clothings.map((clothing) => (
                   <li className="clothing-el" key={clothing.id}>
-                    <span> Rūbai: </span>
-                    <Link to={`/clothes/${clothing.id}`}>{clothing.name}</Link>
+                    <Link className="clothing-link" to={`/clothes/${clothing.id}`}>
+                      {clothing.name}
+                    </Link>
                   </li>
                 ))}
               </ul>
@@ -91,13 +95,14 @@ function User() {
           )}
           {user.orders ? (
             <div className="orders-container">
-              <h3>Užsakymų sąrašas</h3>
+              <h3>Užsakytos paslaugos:</h3>
 
               <ul className="orders-list">
                 {user.orders.map((order) => (
                   <li className="orders-el" key={order.id}>
-                    <span> Užsakymai: </span>
-                    <Link to={`/orders/${order.id}`}>({order.id})</Link>
+                    <Link className="order-link" to={`/orders/${order.id}`}>
+                      <span>Užsakymai</span>({order.service.title})
+                    </Link>
                   </li>
                 ))}
               </ul>
@@ -106,7 +111,10 @@ function User() {
             <h2>Paslaugų sarašas yra tuščias</h2>
           )}
           {!isEdit && <button onClick={() => setIsEdit(true)}>Koreguoti vartotoją</button>}
-        </>
+          <button className="delete-data" onClick={userDeleteHandler}>
+            Ištrinti vartotoją
+          </button>
+        </div>
       )}
     </Container>
   );

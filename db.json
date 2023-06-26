@@ -5,6 +5,42 @@
       "name": "Laura Matiuk",
       "email": "ermelinda990@gmail.com",
       "phone": "86453635278"
+    },
+    {
+      "id": 2,
+      "name": "Arturas",
+      "phone": "5746764864",
+      "email": "arturmatiuk@gmail.com"
+    },
+    {
+      "name": "Laura",
+      "phone": "5746764864",
+      "email": "ermelinda990@gmail.com",
+      "id": 3
+    },
+    {
+      "name": "Laura",
+      "phone": "5746764864",
+      "email": "arturmatiuk@gmail.com",
+      "id": 4
+    },
+    {
+      "name": "Arturas",
+      "phone": "5746764864",
+      "email": "arturmatiuk@gmail.com",
+      "id": 5
+    },
+    {
+      "name": "Laura",
+      "phone": "5746764864",
+      "email": "ricardmatiuk@gmail.com",
+      "id": 6
+    },
+    {
+      "name": "Laura",
+      "phone": "5746764864",
+      "email": "ermelinda990@gmail.com",
+      "id": 7
     }
   ],
   "clothings": [
@@ -17,6 +53,26 @@
       "color": "Juodas",
       "userId": 1,
       "photo": "https://m.media-amazon.com/images/I/61ZETrfhTeL._AC_UX679_.jpg"
+    },
+    {
+      "userId": 1,
+      "id": 2,
+      "name": "Kelnes",
+      "size": "L",
+      "gender": "Vyras",
+      "fabric": "Dzinsas",
+      "color": "Melyna",
+      "photo": "https://www.vilkpedesbustas.lt/uploads/D%C5%BEinsai-vyrams-mados-vyri%C5%A1kos-keln%C4%97s-slim-d%C5%BEinsinio/54505-1.jpeg"
+    },
+    {
+      "userId": 1,
+      "id": 3,
+      "name": "Sijonas",
+      "size": "L",
+      "gender": "Vyras",
+      "fabric": "Dzinsas",
+      "color": "Melyna",
+      "photo": "https://www.vilkpedesbustas.lt/uploads/D%C5%BEinsai-vyrams-mados-vyri%C5%A1kos-keln%C4%97s-slim-d%C5%BEinsinio/54505-1.jpeg"
     }
   ],
   "services": [
@@ -25,6 +81,12 @@
       "title": "Kelniu trumpinimas",
       "body": "Kelniu trumpinimas reikalingo ilgo, kelniu galu tvarkymas, uzsiuvimas",
       "price": 5
+    },
+    {
+      "id": 2,
+      "title": "Sijono siaurinimas",
+      "body": "Pagal išmatavimus, susiųti tinkamo dydžio gaminį",
+      "price": "6"
     }
   ],
   "orders": [
@@ -34,6 +96,13 @@
       "clothingId": 1,
       "serviceId": 1,
       "body": "Dydelių skylių apdirbimas"
+    },
+    {
+      "id": 3,
+      "userId": 1,
+      "clothingId": 1,
+      "serviceId": 2,
+      "body": "Sagu parinikimas, sagu pritaikymas, sagu siuvimas"
     }
   ]
 }

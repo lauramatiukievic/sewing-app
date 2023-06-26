@@ -46,30 +46,24 @@ function ServiceForm({ service, onCreate, onEdit }) {
     }
   };
   return (
-    <form className="user-form" onSubmit={handleSubmit(onSubmit)}>
+    <form className="form-data" onSubmit={handleSubmit(onSubmit)}>
       <div className="form-input">
-        <label>
-          Pavadinimas:
-          <input {...register("title", { required: true })} />
-          {errors && errors.title && <span> Užpildyti privaloma!</span>}
-        </label>
+        <label>Pavadinimas: </label>
+        <input {...register("title", { required: true })} />
+        {errors && errors.title && <span> Užpildyti privaloma!</span>}
       </div>
       <div className="form-input">
-        <label>
-          Paslaugos aprašymas:
-          <input {...register("body", { required: true })} />
-          {errors && errors.body && <span> Užpildyti privaloma!</span>}
-        </label>
+        <label>Paslaugos aprašymas: </label>
+        <input {...register("body", { required: true })} />
+        {errors && errors.body && <span> Užpildyti privaloma!</span>}
       </div>
       <div className="form-input">
-        <label>
-          Paslaugos kaina:
-          <input {...register("price", { required: true })} />
-          {errors && errors.price && <span> Užpildyti privaloma!</span>}
-        </label>
+        <label>Paslaugos kaina: </label>
+        <input {...register("price", { required: true })} />
+        {errors && errors.price && <span> Užpildyti privaloma!</span>}
       </div>
 
-      {service ? <input type="submit" value="Išsaugoti paslaugą" /> : <input type="submit" value="Sukurti paslaugą" />}
+      {service ? <input className="submit-input" type="submit" value="Išsaugoti paslaugą" /> : <input className="submit-input" type="submit" value="Sukurti paslaugą" />}
     </form>
   );
 }
