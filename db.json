@@ -5,6 +5,12 @@
       "name": "Laura Matiuk",
       "email": "ermelinda990@gmail.com",
       "phone": "86453635278"
+    },
+    {
+      "name": "Laura",
+      "phone": "5746764864",
+      "email": "ermelinda990@gmail.com",
+      "id": 2
     }
   ],
   "clothings": [
@@ -29,7 +35,7 @@
   ],
   "orders": [
     {
-      "id": 2,
+      "id": 1,
       "userId": 1,
       "clothingId": 1,
       "serviceId": 1,
