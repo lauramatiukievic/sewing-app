@@ -15,7 +15,6 @@ function Clothes() {
   async function fetchData() {
     const res = await axios.get(`${API_URL}/clothings?_expand=user`);
     setClothes(res.data.toReversed());
-    console.log(res.data);
   }
 
   useEffect(() => {
@@ -33,14 +32,14 @@ function Clothes() {
       <div className="clothes-page">
         <ClothingForm onCreate={createClothing} />
         <div className="about-clothes">
-          <h2>Drabužiai</h2>
+          <h2 className="page-title">Drabužiai</h2>
+
           <div className="clothes-container">
             {clothes.map((clothing) => (
               <div className="clothes-info" key={clothing.id}>
                 <div className="user-name">
                   <span>Vartotojas:</span>
                   <Link className="users-link" to={`/users/${clothing.user.id}`}>
-                    {" "}
                     {clothing.user.name}
                   </Link>
                 </div>

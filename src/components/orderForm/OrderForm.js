@@ -96,13 +96,12 @@ function OrderForm({ order, onCreate, onEdit }) {
 
   const setCurrentUser = (event) => {
     const userId = Number(event.target.value);
-    setSelectedUserId(userId); // set userId instead of user object
+    setSelectedUserId(userId);
   };
 
   return (
     <form className="form-data" onSubmit={handleSubmit(onSubmit)}>
       <div className="form-select">
-        {" "}
         <select type="number" name="userId" {...register("userId", { required: true, setValueAs: (value) => Number(value), onChange: setCurrentUser })}>
           <option value="" disabled>
             Pasirinkite vartotoja
@@ -113,7 +112,6 @@ function OrderForm({ order, onCreate, onEdit }) {
       </div>
 
       <div className="form-select">
-        {" "}
         <select type="number" name="clothingId" disabled={!selectedUserId} {...register("clothingId", { required: true, setValueAs: (value) => Number(value) })}>
           <option value="" disabled>
             Pasirinkite drabužį
@@ -124,7 +122,6 @@ function OrderForm({ order, onCreate, onEdit }) {
       </div>
 
       <div className="form-select">
-        {" "}
         <select type="number" name="serviceId" {...register("serviceId", { required: true, setValueAs: (value) => Number(value) })}>
           <option value="" disabled>
             Pasirinkite paslaugą

@@ -16,7 +16,6 @@ function Users() {
   async function fetchData() {
     const res = await axios.get(`${API_URL}/users?_embed=orders`);
     setUsers(res.data.toReversed());
-    console.log(res.data);
   }
 
   useEffect(() => {
@@ -36,7 +35,7 @@ function Users() {
       <div className="users-page">
         <UserForm onCreate={createUser}></UserForm>
         <div className="users-container">
-          <h3>Vartotojų saršas</h3>
+          <h2 className="page-title">Vartotojų saršas</h2>
           <ul className="users-list">
             {users.map((user) => (
               <li className="users-name" key={user.id}>

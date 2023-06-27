@@ -35,14 +35,12 @@ function Services() {
       <div className="services-page">
         <ServiceForm onCreate={createService} />
         <div className="services-content">
-          <h1>Paslaugos:</h1>
+          <h2 className="page-title">Paslaugos:</h2>
           <div className="services-container">
             {services.map((service) => (
               <div className="services-info" key={service.id}>
-                {" "}
                 <h2>Paslaugos pavadinimas: </h2>
                 <Link className="services-link" to={`/services/${service.id}`}>
-                  {" "}
                   {service.title}
                 </Link>
                 <p>Paslaugos aprašymas: {service.body}</p>

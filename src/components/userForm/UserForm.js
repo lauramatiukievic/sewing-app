@@ -28,8 +28,6 @@ function UserForm({ onCreate, user, onEdit }) {
           alert("Vartotojas pakoreguotas");
         })
         .catch((error) => {
-          console.log(error);
-
           alert("Klaida koreguojant vartotoją");
         });
     } else {

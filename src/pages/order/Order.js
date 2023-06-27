@@ -72,7 +72,7 @@ function Order() {
 
           <div className="order-info">
             <h2>
-              Vartotojas:{" "}
+              Vartotojas:
               <Link className="users-link" to={`/users/${order.user.id}`}>
                 {order.user.name}
               </Link>
@@ -80,14 +80,12 @@ function Order() {
             <h2>
               Drabužis:
               <Link className="clothes-link" to={`/clothes/${order.clothing[0].id}`}>
-                {" "}
                 {order.clothing[0].name}
               </Link>
             </h2>
             <h3>
-              Paslauga:{" "}
+              Paslauga:
               <Link className="services-link" to={`/services/${order.service.id}`}>
-                {" "}
                 {order.service.title}
               </Link>
             </h3>

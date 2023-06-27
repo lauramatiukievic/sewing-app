@@ -38,7 +38,6 @@ function Service() {
     axios
       .delete(`${API_URL}/services/${id}`)
       .then((res) => {
-        console.log(res.data);
         setServiceDeleted(true);
         alert(`${service.title} buvo ištrintas`);
       })
