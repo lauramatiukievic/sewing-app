@@ -8,7 +8,7 @@ import Clothes from "./pages/clothes/Clothes";
 import Clothing from "./pages/clothing/Clothing";
 import Orders from "./pages/orders/Orders";
 import Order from "./pages/order/Order";
-import Search from "./pages/search/Search";
+
 import Navigation from "./components/navigation/Navigation";
 import Services from "./pages/services/Services";
 import Service from "./pages/service/Service";
@@ -31,8 +31,6 @@ function App() {
 
         <Route path="/orders" element={<Orders>Užsakymai</Orders>} />
         <Route path="/orders/:id" element={<Order>Užsakymas</Order>} />
-
-        <Route path="/search" element={<Search>Paieška</Search>} />
 
         <Route
           path="*"

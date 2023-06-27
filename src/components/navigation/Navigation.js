@@ -36,11 +36,6 @@ function Navigation() {
             užsakymai
           </NavLink>
         </li>
-        <li className="nav-list">
-          <NavLink className="nav-link" to="/search">
-            Paieška
-          </NavLink>
-        </li>
       </ul>
       <button className="menu-button-header">
         <img alt="" className="hamburger" src={hamburger} />
