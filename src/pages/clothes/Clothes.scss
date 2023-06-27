@@ -3,12 +3,17 @@
     flex-wrap: wrap;
     gap: 3%;
     padding: 0;
+
+}
+
+.page-title {
+    display: flex;
     justify-content: center;
 }
 
 .clothes-info {
     display: flex;
-    width: 20%;
+    width: fit-content;
     flex-direction: column;
     border: 2px solid black;
     padding: 10px;
@@ -22,7 +27,8 @@
 .about-clothes {
     display: flex;
     flex-direction: column;
-    align-items: center;
+
+    width: 70%;
 }
 
 .clothes-page {
@@ -30,11 +36,14 @@
     gap: 2%
 }
 
-@media screen and (max-width: 800px) {
+@media screen and (max-width: 850px) {
 
-    .clothes-info {
-        width: 30%;
+    .clothes-container {
+        display: flex;
+        flex-direction: column;
     }
+
+
 }
 
 @media screen and (max-width: 520px) {
@@ -46,7 +55,5 @@
         align-items: center;
     }
 
-    .clothes-info {
-        width: 50%;
-    }
+
 }

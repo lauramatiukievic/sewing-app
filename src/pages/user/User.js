@@ -41,7 +41,6 @@ function User() {
     axios
       .delete(`${API_URL}/users/${id}`)
       .then((res) => {
-        console.log(res.data);
         setUserDeleted(true);
         alert(`${user.name} buvo ištrintas`);
       })
@@ -94,7 +93,7 @@ function User() {
             ) : (
               <h2>Drabužių sarašas yra tuščias</h2>
             )}
-            {user.orders && user.clothings.length !== 0 ? (
+            {user.orders && user.orders.length !== 0 ? (
               <div className="orders-container">
                 <h3>Užsakytos paslaugos:</h3>
 

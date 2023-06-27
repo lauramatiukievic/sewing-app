@@ -17,7 +17,7 @@ function Orders() {
   async function fetchData() {
     axios.get(`${API_URL}/orders?_expand=user&_expand=service`).then((response) => {
       const orders = response.data;
-      axios.get(`${API_URL}/clothings`).then((response) => {
+      axios.get(`${API_URL}/clothings?_embed=user`).then((response) => {
         const clothings = response.data;
         const ordersWithClothings = orders.map((order) => ({
           ...order,
@@ -46,7 +46,7 @@ function Orders() {
       <div className="orders-page">
         <OrderForm onCreate={createOrder} />
         <div className="about-orders">
-          <h1>Užsakymai:</h1>
+          <h2 className="page-title">Užsakymai:</h2>
           <div className="orders-content">
             {orders.map((order) => (
               <div className="orders-info" key={order.id}>

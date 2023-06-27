@@ -22,6 +22,7 @@ Link {
   gap: 5px;
   margin-top: 20px;
   height: fit-content;
+
 }
 
 .form-input {
@@ -58,8 +59,8 @@ input {
 .container {
   .form-data {
     border: 3px solid $borderColor;
+    padding: 20px;
     width: fit-content;
-    padding: 20px
   }
 }
 
