@@ -1,5 +1,6 @@
 import React from "react";
 import axios from "axios";
+import "./Order.scss";
 
 import { API_URL } from "../../config";
 import { useEffect, useState } from "react";
@@ -69,29 +70,40 @@ function Order() {
       ) : (
         <div className="about">
           {isEdit && <OrderForm order={order} onEdit={editOrder} />}
-
-          <div className="order-info">
-            <h2>
-              Vartotojas:
-              <Link className="users-link" to={`/users/${order.user.id}`}>
-                {order.user.name}
-              </Link>
-            </h2>
-            <h2>
-              Drabužis:
-              <Link className="clothes-link" to={`/clothes/${order.clothing[0].id}`}>
-                {order.clothing[0].name}
-              </Link>
-            </h2>
-            <h3>
-              Paslauga:
-              <Link className="services-link" to={`/services/${order.service.id}`}>
-                {order.service.title}
-              </Link>
-            </h3>
+          <div className="about-order">
+            <table className="order-info">
+              <tr>
+                <td>Vartotojas</td>
+                <td>
+                  <Link className="users-link" to={`/users/${order.user.id}`}>
+                    {order.user.name}
+                  </Link>
+                </td>
+              </tr>
+              <tr>
+                <td>Drabužis</td>
+                <td>
+                  <Link className="clothes-link" to={`/clothes/${order.clothing[0].id}`}>
+                    {order.clothing[0].name}
+                  </Link>
+                </td>
+              </tr>
+              <tr>
+                <td> Paslauga</td>
+                <td>
+                  <Link className="services-link" to={`/services/${order.service.id}`}>
+                    {order.service.title}
+                  </Link>
+                </td>
+              </tr>
+            </table>
             <p>Užsakymo aprašymas: {order.body}</p>
 
-            {!isEdit && <button onClick={() => setIsEdit(true)}>Koreguoti užsakymą</button>}
+            {!isEdit && (
+              <button className="edit-data" onClick={() => setIsEdit(true)}>
+                Koreguoti užsakymą
+              </button>
+            )}
             <button className="delete-data" onClick={orderDeleteHandler}>
               Ištrinti užsakymą
             </button>

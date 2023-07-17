@@ -1,7 +1,12 @@
 import React from "react";
-import { useForm } from "react-hook-form";
+import { useForm, Controller } from "react-hook-form";
 import axios from "axios";
 import { API_URL } from "../../config";
+import FormImage from "../formImage/FormImage";
+import { RadioGroup, FormControlLabel, Radio } from "@mui/material";
+
+import usermale from "../../photo/vyras.jpg";
+import userfemale from "../../photo/moteris.jpg";
 
 function UserForm({ onCreate, user, onEdit }) {
   const getDefaultValues = () => {
@@ -16,6 +21,7 @@ function UserForm({ onCreate, user, onEdit }) {
     register,
     handleSubmit,
     reset,
+    control,
     formState: { errors },
   } = useForm(getDefaultValues());
 
@@ -47,23 +53,41 @@ function UserForm({ onCreate, user, onEdit }) {
 
   return (
     <form className="form-data" onSubmit={handleSubmit(onSubmit)}>
-      <div className="form-input">
-        <label>Vardas: </label>
-        <input {...register("name", { required: true })} />
-        {errors && errors.name && <span> Užpildyti privaloma!</span>}
+      <div className="form-header">
+        {user ? <h2 className="form-title">Pakoreguoti varotoją</h2> : <h2 className="form-title">Sukurti naują vartotoją</h2>}
+        <FormImage />
       </div>
-      <div className="form-input">
-        <label>Elektroninis paštas: </label>
-        <input {...register("email", { required: true })} />
-        {errors && errors.email && <span> Užpildyti privaloma!</span>}
+      <div className="form-content">
+        <div className="form-input">
+          <label>Vardas: </label>
+          <input {...register("name", { required: true })} />
+          {errors && errors.name && <span> Užpildyti privaloma!</span>}
+        </div>
+        <section>
+          <label>Jūsų lytis</label>
+          <Controller
+            render={({ field }) => (
+              <RadioGroup aria-label="gender" {...field}>
+                <FormControlLabel value="Moteris" control={<Radio />} label="Vyras" />
+                <FormControlLabel value="Vyras" control={<Radio />} label="Moteris" />
+              </RadioGroup>
+            )}
+            name="RadioGroup"
+            control={control}
+          />
+        </section>
+        <div className="form-input">
+          <label>Elektroninis paštas: </label>
+          <input {...register("email", { required: true })} />
+          {errors && errors.email && <span> Užpildyti privaloma!</span>}
+        </div>
+        <div className="form-input">
+          <label>Telefono numeris: </label>
+          <input {...register("phone", { required: true })} />
+          {errors && errors.phone && <span> Užpildyti privaloma!</span>}
+        </div>
       </div>
-      <div className="form-input">
-        <label>Telefono numeris: </label>
-        <input {...register("phone", { required: true })} />
-        {errors && errors.phone && <span> Užpildyti privaloma!</span>}
-      </div>
-
-      {user ? <input className="submit-input" type="submit" value="Išsaugoti vartotoją" /> : <input className="submit-input" type="submit" value="Sukurti vartotoją" />}
+      {user ? <input className="submit-input" type="submit" value="Išsaugoti vartotoją" /> : <input className="submit-input" type="submit" value="Pridėti vartotoją" />}
     </form>
   );
 }

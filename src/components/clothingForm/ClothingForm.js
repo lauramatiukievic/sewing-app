@@ -3,6 +3,7 @@ import { useForm } from "react-hook-form";
 import axios from "axios";
 import { API_URL } from "../../config";
 import { useState } from "react";
+import FormImage from "../formImage/FormImage";
 
 function ClothingForm({ clothing, onCreate, onEdit }) {
   const [users, setUsers] = useState([]);
@@ -20,6 +21,7 @@ function ClothingForm({ clothing, onCreate, onEdit }) {
     register,
     handleSubmit,
     reset,
+
     formState: { errors },
   } = useForm(getDefaultValues());
 
@@ -62,9 +64,12 @@ function ClothingForm({ clothing, onCreate, onEdit }) {
   ));
   return (
     <form className="form-data" onSubmit={handleSubmit(onSubmit)}>
-      <div className="form-select">
-        {" "}
-        <select name="userId" {...register("userId", { required: true, setValueAs: (value) => Number(value) })}>
+      <div className="form-header">
+        {clothing ? <h2 className="form-title">Pakoreguoti drabužį</h2> : <h2 className="form-title">Sukurti naują drabužį</h2>}
+        <FormImage />
+      </div>
+      <div className="form-selector">
+        <select className="select-el" name="userId" {...register("userId", { required: true, setValueAs: (value) => Number(value) })}>
           <option value="" disabled>
             Pasirinkite vartotoja
           </option>

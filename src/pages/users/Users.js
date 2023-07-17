@@ -10,6 +10,9 @@ import { RingLoader } from "react-spinners";
 import Container from "../../components/container/Container";
 import UserForm from "../../components/userForm/UserForm";
 
+import usermale from "../../photo/vyras.jpg";
+import userfemale from "../../photo/moteris.jpg";
+
 function Users() {
   const [users, setUsers] = useState([]);
 
@@ -36,16 +39,20 @@ function Users() {
         <UserForm onCreate={createUser}></UserForm>
         <div className="users-container">
           <h2 className="page-title">Vartotojų saršas</h2>
-          <ul className="users-list">
+          <div className="users-list">
             {users.map((user) => (
-              <li className="users-name" key={user.id}>
-                <Link className="users-link" to={`/users/${user.id}`}>
-                  {user.name}
-                </Link>
-                <span className="orders">(Užsakymų skaičius {user.orders ? user.orders.length : 0})</span>
-              </li>
+              <div className="users-name" key={user.id}>
+                {user.RadioGroup === "Moteris" ? <img className="user-image" src={usermale} alt="male" /> : <img className="user-image" src={userfemale} alt="female" />}
+                <div className="about-users">
+                  <Link className="users-link" to={`/users/${user.id}`}>
+                    {user.name}
+                  </Link>
+
+                  <span className="orders">(Užsakymų skaičius {user.orders ? user.orders.length : 0})</span>
+                </div>
+              </div>
             ))}
-          </ul>
+          </div>
         </div>
       </div>
     </Container>

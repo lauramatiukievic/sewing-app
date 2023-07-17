@@ -1,0 +1,61 @@
+{
+  "users": [
+    {
+      "id": 1,
+      "RadioGroup": "Moteris",
+      "name": "Laura Matiuk",
+      "email": "ermelinda990@gmail.com",
+      "phone": "86453635278"
+    },
+    {
+      "id": 2,
+      "name": "Arturas",
+      "phone": "sadada",
+      "email": "ricardmatiuk@gmail.com",
+      "RadioGroup": "Vyras"
+    },
+    {
+      "name": "laura",
+      "phone": "5746764864",
+      "email": "domkisonas@gmail.com",
+      "RadioGroup": "Vyras",
+      "id": 3
+    },
+    {
+      "id": 5,
+      "name": "djhfj",
+      "phone": "h",
+      "email": "hhh",
+      "RadioGroup": "Moteris"
+    }
+  ],
+  "clothings": [
+    {
+      "id": 1,
+      "name": "Sijonas",
+      "size": "M",
+      "gender": "Moteriskas",
+      "fabric": "Trikotazinis",
+      "color": "Juodas",
+      "userId": 1,
+      "photo": "https://m.media-amazon.com/images/I/61ZETrfhTeL._AC_UX679_.jpg"
+    }
+  ],
+  "services": [
+    {
+      "id": 1,
+      "title": "Kelniu trumpinimas",
+      "body": "Kelniu trumpinimas reikalingo ilgo, kelniu galu tvarkymas, uzsiuvimas",
+      "price": 5
+    }
+  ],
+  "orders": [
+    {
+      "id": 1,
+      "userId": 1,
+      "clothingId": 1,
+      "serviceId": 1,
+      "body": "Sagu parinikimas, sagu pritaikymas, sagu siuvimas"
+    }
+  ]
+}

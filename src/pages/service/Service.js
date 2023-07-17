@@ -64,7 +64,11 @@ function Service() {
               <p>Paslaugos kaina: {service.price} e.</p>
             </div>
 
-            {!isEdit && <button onClick={() => setIsEdit(true)}>Koreguoti paslaugą</button>}
+            {!isEdit && (
+              <button className="edit-data" onClick={() => setIsEdit(true)}>
+                Koreguoti paslaugą
+              </button>
+            )}
             <button className="delete-data" onClick={serviceDeleteHandler}>
               Ištrinti paslaugą
             </button>

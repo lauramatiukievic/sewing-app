@@ -11,6 +11,8 @@ import Container from "../../components/container/Container";
 import { Link } from "react-router-dom";
 import OrderForm from "../../components/orderForm/OrderForm";
 
+import hanger from "../../photo/pakaba.jpg";
+
 function Orders() {
   const [orders, setOrders] = useState(null);
 
@@ -50,20 +52,20 @@ function Orders() {
           <div className="orders-content">
             {orders.map((order) => (
               <div className="orders-info" key={order.id}>
+                <div>
+                  <img src={hanger} alt="hanger" />
+                </div>
                 <h2>
-                  Vartotojas:{" "}
                   <Link className="users-link" to={`/users/${order.user.id}`}>
                     {order.user.name}
                   </Link>
                 </h2>
                 <h3>
-                  Drabužis:
                   <Link className="clothes-link" to={`/clothes/${order.clothing.id}`}>
                     {order.clothing.name}
                   </Link>
                 </h3>
                 <h3>
-                  Paslauga:{" "}
                   <Link className="services-link" to={`/services/${order.service.id}`}>
                     {" "}
                     {order.service.title}

@@ -63,26 +63,43 @@ function Clothing() {
           <div className="clothing-data">
             <div className="about">
               {isEdit && <ClothingForm clothing={clothing} onEdit={editClothing} />}
+              <div className="clothing-title">
+                <h2>Drabužio informacija</h2>
+              </div>
+
               <div className="clothing-info">
                 <div className="registration-data">
-                  <h2>Drabužio informacija:</h2>
                   <h4>Vartotojo vardas: {clothing.user.name}</h4>
                   <h4>Registruojamas drabužis: {clothing.name}</h4>
                 </div>
-                <div className="clothing-charac">
+                <table className="clothing-charac">
                   <h3>Drabužio charakteristika:</h3>
-                  <p>Dydis: {clothing.size}</p>
-                  <p>Nešiotojas: {clothing.gender}</p>
-                  <p>Audinys: {clothing.fabric}</p>
-                  <p>Spalva: {clothing.color}</p>
-                </div>
+                  <tr>
+                    <td className="clothes-data">Dydis:</td> <td className="clothing-data"> {clothing.size}</td>
+                  </tr>
+                  <tr>
+                    <td className="clothes-data">Nešiotojas: </td> <td className="clothing-data">{clothing.gender}</td>
+                  </tr>
+                  <tr>
+                    <td className="clothes-data">Audinys: </td>
+                    <td className="clothing-data"> {clothing.fabric}</td>
+                  </tr>
+                  <tr>
+                    <td className="clothes-data">Spalva: </td>
+                    <td className="clothing-data">{clothing.color}</td>
+                  </tr>
+                </table>
                 <div className="clothing-photo">
-                  <h3>Drabužio nuotrauka:</h3>
-                  <img width="150" height="150" src={clothing.photo} alt="" />
+                  <img width="200" height="200" src={clothing.photo} alt="" />
                 </div>
               </div>
               <div className="clothing-buttons">
-                {!isEdit && <button onClick={() => setIsEdit(true)}> Koreguoti drabužį </button>}
+                {!isEdit && (
+                  <button className="edit-data" onClick={() => setIsEdit(true)}>
+                    {" "}
+                    Koreguoti drabužį{" "}
+                  </button>
+                )}
                 <button className="delete-data" onClick={userDeleteHandler}>
                   Ištrinti drabužį
                 </button>

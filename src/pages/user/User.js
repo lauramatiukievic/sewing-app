@@ -10,6 +10,9 @@ import { RingLoader } from "react-spinners";
 import Container from "../../components/container/Container";
 import UserForm from "../../components/userForm/UserForm";
 
+import orderImage from "../../photo/orderrr.jpg";
+import clothesIamge from "../../photo/drabuziaisarasui.jpg";
+
 function User() {
   const { id } = useParams();
   const [user, setUser] = useState(null);
@@ -61,59 +64,85 @@ function User() {
           </>
         ) : (
           <div className="about">
-            {isEdit && <UserForm user={user} onEdit={editUser}></UserForm>}
-
-            <div className="about-user">
-              <h2>Vartotojo informacija:</h2>
-              <h4 className="user-name"> Vardas: {user.name}</h4>
-              <div className="contact-info">
-                <h4>Kontaktai:</h4>
-                <a className="email" href={"mailto:" + user.email}>
-                  Elektroninis paštas: {user.email}
-                </a>
-                <a className="phone" href={"tel:" + user.phone}>
-                  Telefono numeris: {user.phone}
-                </a>
+            <div className="about-info">
+              {isEdit && <UserForm user={user} onEdit={editUser}></UserForm>}
+              <div className="user-info-title">
+                <h2>Vartotojo informacija:</h2>
+              </div>
+              <div className="user-information">
+                <div className="about-user">
+                  <div className="user-info-details">
+                    <h4 className="user-name"> Vardas: {user.name}</h4>
+                    <span>{user.RadioGroup}</span>
+                    <div className="contact-info">
+                      <h4>Kontaktai:</h4>
+                      <div className="connection-info">
+                        <a className="email" href={"mailto:" + user.email}>
+                          Elektroninis paštas: {user.email}
+                        </a>
+                        <a className="phone" href={"tel:" + user.phone}>
+                          Telefono numeris: {user.phone}
+                        </a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div className="list-order-clothes">
+                  {user.clothings && user.clothings.length !== 0 ? (
+                    <div className="clothe-container">
+                      <div className="clothes-title">
+                        <h3>Drabužių sąrašas </h3>
+                        {/* <img src={clothesIamge} alt="clothes" /> */}
+                      </div>
+                      <ul className="clothes-list">
+                        {user.clothings.map((clothing) => (
+                          <li className="clothing-el" key={clothing.id}>
+                            <Link className="clothing-link" to={`/clothes/${clothing.id}`}>
+                              {clothing.name}
+                            </Link>
+                          </li>
+                        ))}
+                      </ul>
+                    </div>
+                  ) : (
+                    <div className="order-title">
+                      <h2>Drabužių sarašas yra tuščias</h2>
+                      {/* <img src={clothesIamge} alt="clothes" /> */}
+                    </div>
+                  )}
+                  {user.orders && user.orders.length !== 0 ? (
+                    <div className="orders-container">
+                      <div className="order-title">
+                        <h3>Užsakytos paslaugos</h3>
+                        {/* <img src={orderImage} alt="oder" /> */}
+                      </div>
+                      {user.orders.map((order) => (
+                        <div className="orders-el" key={order.id}>
+                          <Link className="order-link" to={`/orders/${order.id}`}>
+                            <span>Užsakymai</span>({order.service.title})
+                          </Link>
+                        </div>
+                      ))}
+                    </div>
+                  ) : (
+                    <div className="order-title">
+                      <h2>Paslaugų sarašas yra tuščias</h2>
+                      {/* <img src={orderImage} alt="oder" /> */}
+                    </div>
+                  )}
+                </div>
+              </div>
+              <div className="user-buttons">
+                {!isEdit && (
+                  <button className="edit-data" onClick={() => setIsEdit(true)}>
+                    Koreguoti vartotoją
+                  </button>
+                )}
+                <button className="delete-data" onClick={userDeleteHandler}>
+                  Ištrinti vartotoją
+                </button>
               </div>
             </div>
-            {user.clothings && user.clothings.length !== 0 ? (
-              <div className="clothe-container">
-                <h3>Drabužių sąrašas</h3>
-
-                <ul className="clothes-list">
-                  {user.clothings.map((clothing) => (
-                    <li className="clothing-el" key={clothing.id}>
-                      <Link className="clothing-link" to={`/clothes/${clothing.id}`}>
-                        {clothing.name}
-                      </Link>
-                    </li>
-                  ))}
-                </ul>
-              </div>
-            ) : (
-              <h2>Drabužių sarašas yra tuščias</h2>
-            )}
-            {user.orders && user.orders.length !== 0 ? (
-              <div className="orders-container">
-                <h3>Užsakytos paslaugos:</h3>
-
-                <ul className="orders-list">
-                  {user.orders.map((order) => (
-                    <li className="orders-el" key={order.id}>
-                      <Link className="order-link" to={`/orders/${order.id}`}>
-                        <span>Užsakymai</span>({order.service.title})
-                      </Link>
-                    </li>
-                  ))}
-                </ul>
-              </div>
-            ) : (
-              <h2>Paslaugų sarašas yra tuščias</h2>
-            )}
-            {!isEdit && <button onClick={() => setIsEdit(true)}>Koreguoti vartotoją</button>}
-            <button className="delete-data" onClick={userDeleteHandler}>
-              Ištrinti vartotoją
-            </button>
           </div>
         )}
       </div>

@@ -1,10 +1,4 @@
 .about {
-    .clothing-data {
-        display: flex;
-    }
-}
-
-.about {
     .clothing-info {
         display: flex;
         gap: 10%;
@@ -12,11 +6,51 @@
 
 }
 
+.clothing-photo {
+    border: solid 2px rgb(187, 185, 182)
+}
+
+table,
+th,
+td {
+    border: 2px solid rgb(187, 185, 182);
+    padding: 5px;
+}
+
+
+table {
+    h3 {
+        padding: 5px;
+    }
+}
+
+.clothing-data {
+    .about {
+        display: flex;
+        flex-direction: column;
+
+    }
+}
+
+.clothing-title {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+.clothing-buttons {
+    display: flex;
+    justify-content: space-evenly;
+    margin-top: 20px;
+}
+
+
+
 
 @media screen and (max-width: 880px) {
 
     .about {
-        width: 80%;
+        width: 100%;
     }
 
     .about {

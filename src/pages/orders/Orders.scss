@@ -8,15 +8,22 @@
 
 .orders-info {
     display: flex;
-    width: fit-content;
+    width: 50%;
     margin-top: 20px;
     flex-direction: column;
     border: 2px solid black;
     padding: 10px;
     list-style-type: none;
     border-radius: 5px;
-    border-color: burlywood;
-    box-shadow: 5px 3px 3px burlywood;
+    border-color: rgb(187, 185, 182);
+    box-shadow: 5px 3px 3px rgb(187, 185, 182);
+
+    img {
+        width: 260px;
+
+        object-fit: cover;
+
+    }
 }
 
 .orders-page {
@@ -35,6 +42,14 @@
         justify-content: center;
 
     }
+
+    .orders-info {
+
+
+        img {
+            width: 180px;
+        }
+    }
 }
 
 @media screen and (max-width: 700px) {
@@ -45,6 +60,11 @@
 
     .orders-info {
         width: 80%;
+
+        img {
+            width: 200px;
+        }
+
     }
 }
 
@@ -59,5 +79,21 @@
 
     .orders-info {
         width: 100%;
+
+        img {
+            width: 250px;
+        }
+    }
+}
+
+@media screen and (max-width: 430px) {
+
+
+    .orders-info {
+
+
+        img {
+            width: 200px;
+        }
     }
 }

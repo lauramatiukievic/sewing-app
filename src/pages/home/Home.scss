@@ -1,21 +1,44 @@
-.home-page {
-    background-image: url("../../photo/pexels-photo-461035.jpeg");
-    background-position: center;
+@import '~bootstrap/scss/bootstrap';
+
+
+.banner {
+    margin-top: 0;
+    padding: 260px 0 100px 0;
+    background-image: url("../../photo/whiteb.jpg");
+    background-position: top center;
+    background-size: contain;
     background-repeat: repeat;
 
-    height: 400px;
-    position: relative;
 
 
 }
 
+.banner img {
+    animation: updown 3s linear infinite;
+    mix-blend-mode: color-burn;
+}
+
+@keyframes updown {
+    0% {
+        transform: translateY(-20px);
+    }
+
+    50% {
+        transform: translateY(20px);
+    }
+
+    100% {
+        transform: translateY(-20px);
+    }
+}
+
 .registration {
     color: black;
-    position: absolute;
+    position: relative;
     top: 100%;
     display: flex;
     flex-direction: column;
-
+    margin-top: 50px;
     font-size: 20px;
 
 }

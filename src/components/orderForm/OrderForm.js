@@ -4,6 +4,7 @@ import axios from "axios";
 import { API_URL } from "../../config";
 import { useState } from "react";
 import { RingLoader } from "react-spinners";
+import FormImage from "../formImage/FormImage";
 
 function OrderForm({ order, onCreate, onEdit }) {
   const [users, setUsers] = useState(null);
@@ -101,8 +102,12 @@ function OrderForm({ order, onCreate, onEdit }) {
 
   return (
     <form className="form-data" onSubmit={handleSubmit(onSubmit)}>
-      <div className="form-select">
-        <select type="number" name="userId" {...register("userId", { required: true, setValueAs: (value) => Number(value), onChange: setCurrentUser })}>
+      <div className="form-header">
+        {order ? <h2 className="form-title">Pakoreguoti užsakymą</h2> : <h2 className="form-title">Sukurti naują užsakymą</h2>}
+        <FormImage />
+      </div>
+      <div className="form-selector">
+        <select className="select-el" type="number" name="userId" {...register("userId", { required: true, setValueAs: (value) => Number(value), onChange: setCurrentUser })}>
           <option value="" disabled>
             Pasirinkite vartotoja
           </option>
@@ -111,8 +116,8 @@ function OrderForm({ order, onCreate, onEdit }) {
         {errors && errors.userId && <span> Užpildyti privaloma!</span>}
       </div>
 
-      <div className="form-select">
-        <select type="number" name="clothingId" disabled={!selectedUserId} {...register("clothingId", { required: true, setValueAs: (value) => Number(value) })}>
+      <div className="form-selector">
+        <select className="select-el" type="number" name="clothingId" disabled={!selectedUserId} {...register("clothingId", { required: true, setValueAs: (value) => Number(value) })}>
           <option value="" disabled>
             Pasirinkite drabužį
           </option>
@@ -121,8 +126,8 @@ function OrderForm({ order, onCreate, onEdit }) {
         {errors && errors.clothingId && <span> Užpildyti privaloma!</span>}
       </div>
 
-      <div className="form-select">
-        <select type="number" name="serviceId" {...register("serviceId", { required: true, setValueAs: (value) => Number(value) })}>
+      <div className="form-selector">
+        <select className="select-el" type="number" name="serviceId" {...register("serviceId", { required: true, setValueAs: (value) => Number(value) })}>
           <option value="" disabled>
             Pasirinkite paslaugą
           </option>

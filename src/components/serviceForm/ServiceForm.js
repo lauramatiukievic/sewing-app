@@ -2,6 +2,7 @@ import React from "react";
 import { useForm } from "react-hook-form";
 import axios from "axios";
 import { API_URL } from "../../config";
+import FormImage from "../formImage/FormImage";
 
 function ServiceForm({ service, onCreate, onEdit }) {
   const getDefaultValues = () => {
@@ -47,6 +48,10 @@ function ServiceForm({ service, onCreate, onEdit }) {
   };
   return (
     <form className="form-data" onSubmit={handleSubmit(onSubmit)}>
+      <div className="form-header">
+        {service ? <h2 className="form-title">Pakoreguoti paslaugą</h2> : <h2 className="form-title">Sukurti naują paslaugą</h2>}
+        <FormImage />
+      </div>
       <div className="form-input">
         <label>Pavadinimas: </label>
         <input {...register("title", { required: true })} />

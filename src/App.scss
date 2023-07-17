@@ -1,4 +1,34 @@
-$borderColor: burlywood;
+@import '~bootstrap/scss/bootstrap';
+
+$borderColor: rgb(187, 185, 182);
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+a:hover {
+  text-decoration: none;
+}
+
+.singer {
+  width: 100%;
+  height: auto;
+}
+
+
+
+
+
+input:focus,
+textarea:focus,
+select:focus {
+  outline: none;
+}
+
+
+
 
 Link {
   text-decoration: none;
@@ -12,9 +42,14 @@ Link {
   margin-top: 20px;
 }
 
+.page-title {
+  margin-top: 50px;
+  margin-bottom: 50px;
+}
+
 
 .form-data {
-
+  width: 50%;
   display: flex;
   flex-wrap: nowrap;
   flex-direction: column;
@@ -22,39 +57,63 @@ Link {
   gap: 5px;
   margin-top: 20px;
   height: fit-content;
+  border: 2px solid $borderColor;
+  padding: 20px;
 
 }
 
 .form-input {
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-between;
-  align-items: baseline;
 
+  flex-direction: column;
 }
 
-select {
-  width: 170px;
+.select-el {
+  width: 100%;
   border: 1px solid $borderColor;
   padding: 5px;
 }
 
+
+
 .submit-input,
-button {
+.edit-data,
+.delete-data {
   margin-top: 10px;
   border: 2px solid $borderColor;
-  padding: 6px 10px;
+  padding: 6px 15px;
   border-radius: 20px;
   background-color: white;
   text-transform: uppercase;
   margin-right: 5px;
+  width: fit-content;
+}
+
+.needle {
+  width: 20%;
+}
+
+.form-header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 input {
-  width: fit-content;
-  border: 1px solid $borderColor;
+
+  border-bottom: 2px solid $borderColor;
+  border-top: 0px;
+  border-right: 0px;
+  border-left: 0px;
   padding: 5px;
 }
+
+label {
+  margin-top: 10px;
+}
+
+
 
 .container {
   .form-data {
@@ -69,6 +128,7 @@ input {
     border: transparent;
     padding: 0;
     margin: 0;
+
   }
 }
 
@@ -103,10 +163,14 @@ input {
   }
 
   h2 {
-    font-size: 20px;
+    font-size: 18px;
   }
 
   h3 {
     font-size: 16px;
+  }
+
+  .form-data {
+    width: 100%;
   }
 }
